@@ -1,0 +1,34 @@
+cocina-express-api/
+|- .env                         // Variables de entorno
+|- package.json
+|- server.js                    // Inicio del servidor
+|- src/
+|---- config/
+|-------- database.js          // Configuración MongoDB
+|---- models/
+|-------- userModel.js          // Schema de users
+|-------- restaurantModel.js    // Schema de restaurants
+|-------- restaurantTagModel.js // Schema de restaurant_tags
+|-------- categoryModel.js      // Schema de categories
+|-------- tagModel.js           // Schema de tags (productos)
+|-------- productModel.js       // Schema de products
+|-------- toppingModel.js       // Schema de toppings
+|-------- orderModel.js         // Schema de orders
+|-------- cartModel.js          // Schema de cart
+|---- controllers/
+|-------- userController.js     // CRUD usuarios
+|-------- restaurantController.js
+|-------- productController.js
+|-------- orderController.js
+|-------- cartController.js
+|---- routes/
+|-------- userRoutes.js         // /api/users/*
+|-------- restaurantRoutes.js   // /api/restaurants/*
+|-------- productRoutes.js      // /api/products/*
+|-------- orderRoutes.js        // /api/orders/*
+|-------- cartRoutes.js         // /api/cart/*
+|---- middleware/
+|-------- roleMiddleware.js     // Verificar roles (isOwner, isAdmin)
+|---- utils/
+|-------- responseHelper.js     // Respuestas estandarizadas
+|---- app.js                    // Express app setup
