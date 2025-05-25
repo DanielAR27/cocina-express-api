@@ -1,0 +1,228 @@
+// ============ COLECCIÓN: users ============
+{
+  "_id": "ObjectId",
+  "name": "Juan Pérez",
+  "email": "juan@email.com",
+  "google_id": "9139419142",
+  "phone": "+506 8888-8888",
+  "role": "owner",
+  "profile_image": "https://placehold.co/400x400?text=Usuario",
+  "address": {
+    "street": "Av Central",
+    "city": "San José",
+    "province": "San José",
+    "postal_code": "10101"
+  },
+  "favorite_restaurants": [
+    "ObjectId('664f8934fc13ae001fae52a1')",
+    "ObjectId('664f8934fc13ae001fae52a2')"
+  ],
+  "favorite_products": [
+    {
+      "restaurant_id": "ObjectId('664f8934fc13ae001fae52a1')",
+      "product_id": "ObjectId('664f8934fc13ae001fae6234')"
+    },
+    {
+      "restaurant_id": "ObjectId('664f8934fc13ae001fae52a2')",
+      "product_id": "ObjectId('664f8934fc13ae001fae6345')"
+    }
+  ],
+  "created_at": "2025-05-23T10:00:00Z",
+  "updated_at": "2025-05-23T10:00:00Z",
+  "is_active": true
+}
+
+
+// ============ COLECCIÓN: restaurants ============
+{
+  "_id": "ObjectId",
+  "name": "Burger Palace",
+  "description": "Las mejores hamburguesas de la ciudad",
+  "owner_id": "ObjectId", // referencia al user owner
+  "banner": "https://placehold.co/800x300?text=Banner+Restaurante",
+  "restaurant_tags": ["ObjectId", "ObjectId"], // ej: "Comida Rápida", "Hamburguesas"
+  "contact": {
+    "phone": "+506 2222-2222",
+    "email": "info@burgerpalace.com"
+  },
+  "address": {
+    "street": "Calle 5, Av 2",
+    "city": "San José",
+    "province": "San José"
+  },
+  "business_hours": {
+    "monday": { "open": "10:00", "close": "22:00" },
+    "tuesday": { "open": "10:00", "close": "22:00" },
+    "sunday": { "closed": true }
+  },
+  "created_at": "2025-05-23T10:00:00Z",
+  "is_active": true
+}
+
+// ============ COLECCIÓN: restaurant_tags ============
+{
+  "_id": "ObjectId",
+  "name": "Comida Italiana",
+  "created_at": "2025-05-23T10:00:00Z",
+  "is_active": true
+}
+
+// ============ COLECCIÓN: categories ============
+{
+  "_id": "ObjectId",
+  "restaurant_id": "ObjectId",
+  "name": "Hamburguesas",
+  "description": "Deliciosas hamburguesas artesanales",
+  "image": "https://placehold.co/600x400?text=Hamburguesas",
+  "created_by": "ObjectId", // owner del restaurante
+  "created_at": "2025-05-23T10:00:00Z",
+  "is_active": true,
+  "order": 1 // para ordenar en el menú
+}
+
+// ============ COLECCIÓN: tags ============
+{
+  "_id": "ObjectId",
+  "restaurant_id": "ObjectId",
+  "name": "Estilo Casero",
+  "type": "preparation", // "health", "dietary", "spice_level", "preparation", "custom"
+  "color": "#FF9800", // colores de la marca del restaurante
+  "description": "Preparado con amor como en casa",
+  "created_by": "ObjectId", // owner del restaurante
+  "created_at": "2025-05-23T10:00:00Z",
+  "is_active": true
+}
+
+// ============ COLECCIÓN: products ============
+{
+  "_id": "ObjectId",
+  "restaurant_id": "ObjectId",
+  "name": "Hamburguesa de la Casa",
+  "description": "Nuestra versión especial con salsa secreta",
+  "category_id": "ObjectId", // referencia a categories
+  "price": 5200,
+  "image": "https://placehold.co/600x400?text=Hamburguesa+Casa",
+  "tags": ["ObjectId", "ObjectId"], // referencias a tags del mismo restaurante
+  "compatible_toppings": ["ObjectId", "ObjectId"], // toppings que acepta
+  "nutritional_info": {
+    "calories": 520,
+    "protein": 25,
+    "carbs": 35,
+    "fat": 18,
+    "fiber": 3
+  },
+  "preparation_time": 15, // minutos
+  "is_available": true,
+  "is_featured": false, // destacado en el menú
+  "stock_quantity": 100,
+  "created_by": "ObjectId", // owner del restaurante
+  "created_at": "2025-05-23T10:00:00Z",
+  "updated_at": "2025-05-23T10:00:00Z"
+}
+
+// ============ COLECCIÓN: toppings ============
+{
+  "_id": "ObjectId",
+  "restaurant_id": "ObjectId",
+  "name": "Torta de Carne Extra",
+  "description": "Torta adicional de carne 100% res",
+  "price": 1200,
+  "tags": ["ObjectId"], // referencias a tags del mismo restaurante
+  "compatible_with": ["ObjectId", "ObjectId"], // productos compatibles del mismo restaurante
+  "nutritional_info": {
+    "calories": 180,
+    "protein": 15,
+    "fat": 12
+  },
+  "is_available": true,
+  "stock_quantity": 50, // control de inventario opcional
+  "created_by": "ObjectId", // owner del restaurante
+  "created_at": "2025-05-23T10:00:00Z"
+}
+
+// ============ COLECCIÓN: orders ============
+{
+ "_id": "ObjectId",
+ "customer_id": "ObjectId",
+ "restaurant_id": "ObjectId",
+ "items": [
+   {
+     "product_id": "ObjectId",
+     "quantity": 1,
+     "unit_price": 5200,
+     "toppings": [
+       {
+         "topping_id": "ObjectId",
+         "quantity": 1,
+         "unit_price": 500
+       },
+       {
+         "topping_id": "ObjectId",
+         "quantity": 1,
+         "unit_price": 800
+       }
+     ],
+     "special_instructions": "Sin cebolla",
+     "subtotal": 6500
+   },
+   {
+     "product_id": "ObjectId",
+     "quantity": 1,
+     "unit_price": 5200,
+     "toppings": [
+       {
+         "topping_id": "ObjectId",
+         "quantity": 1,
+         "unit_price": 500
+       }
+     ],
+     "special_instructions": "Extra salsa",
+     "subtotal": 5700
+   }
+ ],
+ "subtotal": 12200,
+ "delivery_fee": 1500,
+ "tax": 1586,
+ "total": 15286,
+ "status": "pending",
+ "closed": false, // true cuando el cliente confirma recepción
+ "closed_at": null, // timestamp cuando se confirma
+ "payment_method": "card",
+ "payment_status": "pending",
+ "delivery_info": {
+   "type": "delivery",
+   "address": {
+     "street": "Calle 10, Casa 25",
+     "city": "San José"
+   }
+ },
+ "notes": "Timbre roto, tocar puerta",
+ "created_at": "2025-05-23T10:00:00Z",
+ "updated_at": "2025-05-23T10:15:00Z"
+}
+
+// ============ COLECCIÓN: cart ============
+{
+  "_id": "ObjectId",
+  "customer_id": "ObjectId",
+  "restaurant_id": "ObjectId", // UN carrito por restaurante
+  "items": [
+    {
+      "product_id": "ObjectId",
+      "quantity": 2,
+      "unit_price": 5200,
+      "toppings": [
+        {
+          "topping_id": "ObjectId",
+          "quantity": 1,
+          "unit_price": 500
+        }
+      ],
+      "special_instructions": "Sin cebolla",
+      "subtotal": 11400
+    }
+  ],
+  "subtotal": 11400,
+  "created_at": "2025-05-23T10:00:00Z",
+  "updated_at": "2025-05-23T10:15:00Z"
+}
