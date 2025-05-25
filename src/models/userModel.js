@@ -55,6 +55,22 @@ const userSchema = new mongoose.Schema({
       default: null
     }
   },
+  favorite_restaurants: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Restaurant'
+  }],
+  favorite_products: [{
+    restaurant_id: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Restaurant',
+      required: true
+    },
+    product_id: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Product',
+      required: true
+    }
+  }],
   is_active: {
     type: Boolean,
     default: true
