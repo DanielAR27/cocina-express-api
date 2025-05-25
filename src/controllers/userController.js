@@ -1,48 +1,70 @@
 const User = require('../models/userModel');
 const responseHelper = require('../utils/responseHelper');
 
-// Crear o actualizar usuario (desde Google Auth)
-const createOrUpdateUser = async (req, res) => {
+// Crear usuario nuevo (primera vez desde Google Auth)
+const createUser = async (req, res) => {
   try {
-    const { email, name, profile_image, phone, address, role = 'customer' } = req.body;
+    const { google_id, email, name, profile_image, phone, address, role = 'customer' } = req.body;
 
-    // Buscar usuario existente por email
-    let user = await User.findOne({ email });
-
-    if (user) {
-      // Actualizar usuario existente
-      user.name = name || user.name;
-      user.profile_image = profile_image || user.profile_image;
-      user.phone = phone || user.phone;
-      user.address = address || user.address;
-      user.role = role || user.role;
-      
-      await user.save();
-      
-      return responseHelper.success(res, user, 'Usuario actualizado exitosamente');
-    } else {
-      // Crear nuevo usuario
-      user = new User({
-        email,
-        name,
-        password: 'google_auth', // Password placeholder para Google Auth
-        profile_image,
-        phone,
-        address,
-        role
-      });
-
-      await user.save();
-      
-      return responseHelper.success(res, user, 'Usuario creado exitosamente', 201);
+    if (!google_id || !email || !name) {
+      return responseHelper.error(res, 'Google ID, email y nombre son obligatorios', 400);
     }
+
+    // Verificar que no exista ya un usuario con ese google_id o email
+    const existingUser = await User.findOne({ 
+      $or: [{ google_id }, { email }] 
+    });
+
+    if (existingUser) {
+      return responseHelper.error(res, 'Usuario ya existe', 400);
+    }
+
+    // Crear nuevo usuario
+    const user = new User({
+      google_id,
+      email,
+      name,
+      profile_image: profile_image || 'https://placehold.co/400x400?text=Usuario',
+      phone,
+      address,
+      role
+    });
+
+    await user.save();
+    
+    return responseHelper.success(res, user, 'Usuario creado exitosamente', 201);
   } catch (error) {
     if (error.name === 'ValidationError') {
       const errors = Object.values(error.errors).map(err => err.message);
       return responseHelper.validationError(res, errors);
     }
     
-    return responseHelper.error(res, 'Error al procesar usuario', 500);
+    if (error.code === 11000) {
+      return responseHelper.error(res, 'Email o Google ID ya existe', 400);
+    }
+    
+    return responseHelper.error(res, 'Error al crear usuario', 500);
+  }
+};
+
+// Obtener usuario por Google ID
+const getUserByGoogleId = async (req, res) => {
+  try {
+    const { google_id } = req.params;
+    
+    if (!google_id) {
+      return responseHelper.error(res, 'Google ID es requerido', 400);
+    }
+    
+    const user = await User.findOne({ google_id });
+    
+    if (!user) {
+      return responseHelper.error(res, 'Usuario no encontrado', 404);
+    }
+
+    return responseHelper.success(res, user, 'Usuario encontrado');
+  } catch (error) {
+    return responseHelper.error(res, 'Error al obtener usuario', 500);
   }
 };
 
@@ -80,9 +102,17 @@ const updateUser = async (req, res) => {
     const { id } = req.params;
     const updates = req.body;
 
-    // No permitir actualizar email o role directamente
+    // No permitir actualizar campos críticos
+    delete updates.google_id;
     delete updates.email;
-    delete updates.password;
+    delete updates.user_id; // Remover user_id del body para que no se guarde
+    delete updates.created_at;
+    delete updates.updated_at;
+    
+    // Solo admin puede cambiar roles
+    if (updates.role && req.user.role !== 'admin') {
+      delete updates.role;
+    }
     
     const user = await User.findByIdAndUpdate(id, updates, { 
       new: true, 
@@ -109,6 +139,11 @@ const deleteUser = async (req, res) => {
   try {
     const { id } = req.params;
     
+    // Verificar que el usuario no se esté intentando eliminar a sí mismo siendo admin
+    if (req.user._id.toString() === id && req.user.role === 'admin') {
+      return responseHelper.error(res, 'Un administrador no puede desactivar su propia cuenta', 400);
+    }
+    
     const user = await User.findByIdAndUpdate(id, { is_active: false }, { new: true });
 
     if (!user) {
@@ -122,8 +157,9 @@ const deleteUser = async (req, res) => {
 };
 
 module.exports = {
-  createOrUpdateUser,
+  createUser,
   getUserById,
+  getUserByGoogleId,
   getAllUsers,
   updateUser,
   deleteUser

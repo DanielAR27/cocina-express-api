@@ -79,8 +79,40 @@ const isOwnerOrAdmin = async (req, res, next) => {
   }
 };
 
+// Verificar si es el mismo usuario o admin
+const isOwnerOrSelf = async (req, res, next) => {
+  try {
+    const { user_id } = req.body;
+    const { id: targetUserId } = req.params;
+    
+    if (!user_id) {
+      return responseHelper.error(res, 'ID de usuario requerido', 400);
+    }
+
+    const user = await User.findById(user_id);
+    
+    if (!user) {
+      return responseHelper.error(res, 'Usuario no encontrado', 404);
+    }
+
+    // Verificar si es admin o si es el mismo usuario
+    const isAdmin = user.role === 'admin';
+    const isSameUser = user._id.toString() === targetUserId;
+
+    if (!isAdmin && !isSameUser) {
+      return responseHelper.error(res, 'Acceso denegado. Solo puedes modificar tu propia información', 403);
+    }
+
+    req.user = user;
+    next();
+  } catch (error) {
+    return responseHelper.error(res, 'Error verificando permisos', 500);
+  }
+};
+
 module.exports = {
   isAdmin,
   isOwner,
-  isOwnerOrAdmin
+  isOwnerOrAdmin,
+  isOwnerOrSelf
 };
