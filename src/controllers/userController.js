@@ -177,6 +177,7 @@ module.exports = {
   getUserById,
   getUserByGoogleId,
   getAllUsers,
+  getOwners,
   updateUser,
   deleteUser
 };
