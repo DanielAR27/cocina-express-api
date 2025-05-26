@@ -96,6 +96,22 @@ const getAllUsers = async (req, res) => {
   }
 };
 
+// Obtener solo usuarios con rol 'owner' (solo admin)
+const getOwners = async (req, res) => {
+  try {
+    const owners = await User.find({ 
+      role: 'owner', 
+      is_active: true 
+    })
+    .select('name email profile_image created_at')
+    .sort({ name: 1 });
+    
+    return responseHelper.success(res, owners, 'Propietarios obtenidos exitosamente');
+  } catch (error) {
+    return responseHelper.error(res, 'Error al obtener propietarios', 500);
+  }
+};
+
 // Actualizar usuario
 const updateUser = async (req, res) => {
   try {
