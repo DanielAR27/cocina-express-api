@@ -7,12 +7,16 @@ const isAdmin = async (req, res, next) => {
     // Buscar user_id en body (POST/PUT) o query (GET)
     const user_id = req.body.user_id || req.query.user_id;
     
+    console.log('🔍 Middleware - user_id recibido:', user_id); // <-- AQUÍ
+
     if (!user_id) {
       return responseHelper.error(res, 'ID de usuario requerido', 400);
     }
 
     const user = await User.findById(user_id);
     
+    console.log('🔍 Middleware - usuario encontrado:', user ? user.name : 'NO ENCONTRADO'); // <-- AQUÍ
+
     if (!user) {
       return responseHelper.error(res, 'Usuario no encontrado', 404);
     }
