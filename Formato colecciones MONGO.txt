@@ -73,7 +73,6 @@
   "restaurant_id": "ObjectId",
   "name": "Hamburguesas",
   "description": "Deliciosas hamburguesas artesanales",
-  "image": "https://placehold.co/600x400?text=Hamburguesas",
   "created_by": "ObjectId", // owner del restaurante
   "created_at": "2025-05-23T10:00:00Z",
   "is_active": true,
@@ -142,63 +141,85 @@
 
 // ============ COLECCIÓN: orders ============
 {
- "_id": "ObjectId",
- "customer_id": "ObjectId",
- "restaurant_id": "ObjectId",
- "items": [
-   {
-     "product_id": "ObjectId",
-     "quantity": 1,
-     "unit_price": 5200,
-     "toppings": [
-       {
-         "topping_id": "ObjectId",
-         "quantity": 1,
-         "unit_price": 500
-       },
-       {
-         "topping_id": "ObjectId",
-         "quantity": 1,
-         "unit_price": 800
-       }
-     ],
-     "special_instructions": "Sin cebolla",
-     "subtotal": 6500
-   },
-   {
-     "product_id": "ObjectId",
-     "quantity": 1,
-     "unit_price": 5200,
-     "toppings": [
-       {
-         "topping_id": "ObjectId",
-         "quantity": 1,
-         "unit_price": 500
-       }
-     ],
-     "special_instructions": "Extra salsa",
-     "subtotal": 5700
-   }
- ],
- "subtotal": 12200,
- "delivery_fee": 1500,
- "tax": 1586,
- "total": 15286,
- "status": "pending",
- "closed": false, // true cuando el cliente confirma recepción
- "closed_at": null, // timestamp cuando se confirma
- "payment_method": "card",
- "payment_status": "pending",
- "delivery_info": {
-   "type": "delivery",
-   "address": {
-     "street": "Calle 10, Casa 25",
-     "city": "San José"
-   }
- },
- "notes": "Timbre roto, tocar puerta",
- "created_at": "2025-05-23T10:00:00Z",
- "updated_at": "2025-05-23T10:15:00Z"
+  "_id": "ObjectId",
+  "customer_id": "ObjectId", // Referencia al usuario que hace la orden
+  "restaurant_id": "ObjectId", // Restaurante donde se hace la orden
+  
+  // === PRODUCTOS DE LA ORDEN ===
+  "items": [
+    {
+      "product_id": "ObjectId", // Referencia al producto
+      "quantity": 2, // Cantidad de este producto
+      "unit_price": 5200, // Precio unitario al momento de la orden (histórico)
+      "toppings": [
+        {
+          "topping_id": "ObjectId", // Referencia al topping/extra
+          "quantity": 1, // Cantidad de este topping
+          "unit_price": 500 // Precio del topping al momento de la orden
+        }
+      ],
+      "special_instructions": "Sin cebolla, extra salsa", // Instrucciones específicas
+      "subtotal": 11400 // (5200 * 2) + (500 * 1) = subtotal de este item
+    }
+  ],
+  
+  // === TOTALES DE LA ORDEN ===
+  "subtotal": 11400, // Suma de todos los items
+  "delivery_fee": 1500, // Costo de delivery (SI ES PICKUP CUESTA CERO, SI ES DELIVERY ASIGNE 
+                                              UNO CUALQUIERA)
+  "tax": 1677, // Impuestos calculados sobre subtotal*0.13
+  "total": 14577, // subtotal + delivery_fee + tax
+  
+  // === ESTADO DE LA ORDEN ===
+  "status": "pending", // "pending", "confirmed", "preparing", "ready", "delivered", "cancelled"
+  "payment_method": "card", // "card", "cash", "transfer"
+  "payment_status": "pending", // "pending", "paid", "failed"
+  
+  // === CONFIGURACIÓN DE RECURRENCIA ===
+  "order_type": "recurring", // "one_time" = orden normal, "recurring" = se repite automáticamente
+  "recurrence": {
+    "enabled": true, // Si está activa la recurrencia
+    
+    // FRECUENCIA: Cada cuánto se repite
+    "frequency": "weekly", // "weekly", "biweekly", "monthly"
+    
+    // PARA WEEKLY Y BIWEEKLY: Qué días de la semana
+    "days_of_week": [1, 3], // [1=Lunes, 2=Martes, 3=Miércoles, 4=Jueves, 5=Viernes, 6=Sábado, 0=Domingo]
+    // Ejemplo: [1, 3] = se repite los Lunes y Miércoles
+    
+    // PARA MONTHLY: Qué día del mes
+    "day_of_month": null, // Solo se usa si frequency="monthly". Ej: 15 = día 15 de cada mes
+    
+    // CONFIGURACIÓN DE TIEMPO
+    "time_preference": "12:00", // Hora preferida para generar/entregar la orden
+    "start_date": "2025-05-27", // Desde cuándo empezar a generar órdenes recurrentes
+    "end_date": null, // Hasta cuándo (null = indefinido)
+    
+    // CONTROL DE LA RECURRENCIA
+    "is_active": true, // Si está pausada o activa
+    "next_generation_date": "2025-06-02", // Cuándo se debe generar la próxima orden
+    "orders_generated": 3 // Contador de cuántas órdenes se han generado automáticamente
+  },
+  
+  // === RELACIÓN CON OTRAS ÓRDENES ===
+  "is_template": true, // true = esta orden sirve como plantilla para generar otras
+  "parent_order_id": null, // null = es orden original, ObjectId = fue generada de otra orden
+  
+  // === INFORMACIÓN DE ENTREGA ===
+  "delivery_info": {
+    "type": "delivery", // "delivery" o "pickup"
+    "address": {
+      "street": "Calle 10, Casa 25", // Se copia del perfil del usuario
+      "city": "San José",
+      "province": "San José", 
+      "postal_code": "10101",
+      "reference": "Portón azul, casa amarilla" // Referencia específica
+    }
+  },
+  
+  "notes": "Timbre roto, tocar la puerta fuerte", // Notas generales de la orden
+  "created_at": "2025-05-23T10:00:00Z",
+  "updated_at": "2025-05-23T10:15:00Z"
 }
 
 // ============ COLECCIÓN: cart ============

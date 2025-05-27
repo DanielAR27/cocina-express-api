@@ -4,7 +4,8 @@ const responseHelper = require('../utils/responseHelper');
 // Verificar si el usuario es admin
 const isAdmin = async (req, res, next) => {
   try {
-    const { user_id } = req.body;
+    // Buscar user_id en body (POST/PUT) o query (GET)
+    const user_id = req.body.user_id || req.query.user_id;
     
     if (!user_id) {
       return responseHelper.error(res, 'ID de usuario requerido', 400);
@@ -30,7 +31,8 @@ const isAdmin = async (req, res, next) => {
 // Verificar si el usuario es owner
 const isOwner = async (req, res, next) => {
   try {
-    const { user_id } = req.body;
+    // Buscar user_id en body (POST/PUT) o query (GET)
+    const user_id = req.body.user_id || req.query.user_id;
     
     if (!user_id) {
       return responseHelper.error(res, 'ID de usuario requerido', 400);
@@ -56,7 +58,8 @@ const isOwner = async (req, res, next) => {
 // Verificar si es owner o admin
 const isOwnerOrAdmin = async (req, res, next) => {
   try {
-    const { user_id } = req.body;
+    // Buscar user_id en body (POST/PUT) o query (GET)
+    const user_id = req.body.user_id || req.query.user_id;
     
     if (!user_id) {
       return responseHelper.error(res, 'ID de usuario requerido', 400);
@@ -82,7 +85,8 @@ const isOwnerOrAdmin = async (req, res, next) => {
 // Verificar si es el mismo usuario o admin
 const isOwnerOrSelf = async (req, res, next) => {
   try {
-    const { user_id } = req.body;
+    // Buscar user_id en body (POST/PUT) o query (GET)
+    const user_id = req.body.user_id || req.query.user_id;
     const { id: targetUserId } = req.params;
     
     if (!user_id) {

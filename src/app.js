@@ -5,6 +5,7 @@ require('dotenv').config();
 // Importar rutas
 const userRoutes = require('./routes/userRoutes');
 const restaurantRoutes = require('./routes/restaurantRoutes');
+const restaurantTagRoutes = require('./routes/restaurantTagRoutes');
 
 const app = express();
 
@@ -16,6 +17,7 @@ app.use(express.urlencoded({ extended: true })); // Parse URL-encoded bodies
 // Rutas principales
 app.use('/api/users', userRoutes);
 app.use('/api/restaurants', restaurantRoutes);
+app.use('/api/restaurant-tags', restaurantTagRoutes);
 
 // Ruta de prueba
 app.get('/', (req, res) => {
@@ -24,7 +26,8 @@ app.get('/', (req, res) => {
     version: '1.0.0',
     endpoints: {
       users: '/api/users',
-      restaurants: '/api/restaurants'
+      restaurants: '/api/restaurants',
+      restaurantTags: '/api/restaurant-tags'
     },
     timestamp: new Date().toISOString()
   });
