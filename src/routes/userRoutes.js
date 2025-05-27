@@ -10,7 +10,7 @@ router.get('/:id', userController.getUserById); // Obtener usuario por ID
 
 // Rutas que requieren permisos
 router.get('/', isAdmin, userController.getAllUsers); // Solo admin puede ver todos
-router.get('/owners', isAdmin, userController.getOwners); // Solo admin puede ver owners
+router.put('/owners', isAdmin, userController.getOwners); // Solo admin puede ver owners
 router.put('/:id', isOwnerOrSelf, userController.updateUser); // Solo el mismo usuario o admin
 router.delete('/:id', isOwnerOrSelf, userController.deleteUser); // Solo el mismo usuario o admin
 
