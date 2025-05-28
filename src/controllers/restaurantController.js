@@ -48,6 +48,7 @@ const createRestaurant = async (req, res) => {
 
     await restaurant.save();
     await restaurant.populate('owner_id', 'name email');
+    await restaurant.populate('restaurant_tags');
     
     return responseHelper.success(res, restaurant, 'Restaurante creado exitosamente', 201);
   } catch (error) {
@@ -65,6 +66,7 @@ const getAllRestaurants = async (req, res) => {
   try {
     const restaurants = await Restaurant.find({ is_active: true })
       .populate('owner_id', 'name email')
+      .populate('restaurant_tags') // ← Agregar populate para tags
       .sort({ created_at: -1 });
     
     return responseHelper.success(res, restaurants, 'Restaurantes obtenidos exitosamente');
@@ -102,6 +104,7 @@ const getRestaurantsByOwner = async (req, res) => {
       is_active: true 
     })
     .populate('owner_id', 'name email')
+    .populate('restaurant_tags') // ← Agregar populate para tags
     .sort({ created_at: -1 });
     
     return responseHelper.success(res, restaurants, 'Restaurantes del propietario obtenidos exitosamente');
@@ -110,21 +113,27 @@ const getRestaurantsByOwner = async (req, res) => {
   }
 };
 
-// Actualizar restaurante
+// 2. ARREGLAR src/controllers/restaurantController.js - línea 74 en updateRestaurant
 const updateRestaurant = async (req, res) => {
   try {
     const { id } = req.params;
     const updates = req.body;
 
-    // No permitir actualizar campos críticos
-    delete updates.owner_id;
+    // No permitir actualizar campos críticos EXCEPTO owner_id para admins
     delete updates.created_at;
     delete updates.updated_at;
+    
+    // Solo admin puede cambiar owner_id
+    if (updates.owner_id && req.user.role !== 'admin') {
+      delete updates.owner_id;
+    }
     
     const restaurant = await Restaurant.findByIdAndUpdate(id, updates, { 
       new: true, 
       runValidators: true 
-    }).populate('owner_id', 'name email');
+    })
+    .populate('owner_id', 'name email')
+    .populate('restaurant_tags'); // ← Agregar populate para tags
 
     if (!restaurant) {
       return responseHelper.error(res, 'Restaurante no encontrado', 404);

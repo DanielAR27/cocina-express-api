@@ -19,4 +19,4 @@ const restaurantTagSchema = new mongoose.Schema({
 // Índice para búsquedas rápidas
 restaurantTagSchema.index({ name: 1, is_active: 1 });
 
-module.exports = mongoose.model('RestaurantTag', restaurantTagSchema);
+module.exports = mongoose.model('RestaurantTag', restaurantTagSchema, 'restaurant_tags');

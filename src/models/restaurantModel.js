@@ -24,7 +24,7 @@ const restaurantSchema = new mongoose.Schema({
   },
   restaurant_tags: [{
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'Tag'
+    ref: 'RestaurantTag'  // ← Cambiar de 'Tag' a 'RestaurantTag'
   }],
   contact: {
     phone: {
