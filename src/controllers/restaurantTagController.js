@@ -130,7 +130,7 @@ const deleteRestaurantTag = async (req, res) => {
   try {
     const { id } = req.params;
     
-    const tag = await RestaurantTag.findByIdAndUpdate(id);
+    const tag = await RestaurantTag.findByIdAndDelete(id);
 
     if (!tag) {
       return responseHelper.error(res, 'Tag no encontrado', 404);
