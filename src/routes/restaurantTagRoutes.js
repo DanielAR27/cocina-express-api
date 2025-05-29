@@ -14,6 +14,5 @@ router.get('/all', isAdmin, restaurantTagController.getAllRestaurantTagsAdmin); 
 router.get('/:id', restaurantTagController.getRestaurantTagById); // Ver tag específico
 router.put('/:id', isAdmin, restaurantTagController.updateRestaurantTag); // Actualizar tag
 router.delete('/:id', isAdmin, restaurantTagController.deleteRestaurantTag); // Desactivar tag
-router.patch('/:id/reactivate', isAdmin, restaurantTagController.reactivateRestaurantTag); // Reactivar tag
 
 module.exports = router;
