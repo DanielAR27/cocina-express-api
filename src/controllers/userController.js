@@ -160,7 +160,7 @@ const deleteUser = async (req, res) => {
       return responseHelper.error(res, 'Un administrador no puede desactivar su propia cuenta', 400);
     }
     
-    const user = await User.findByIdAndUpdate(id, { is_active: false }, { new: true });
+    const user = await User.findByIdAndDelete(id);
 
     if (!user) {
       return responseHelper.error(res, 'Usuario no encontrado', 404);

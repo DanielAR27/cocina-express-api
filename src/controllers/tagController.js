@@ -183,7 +183,7 @@ const updateTag = async (req, res) => {
   }
 };
 
-// Desactivar tag (soft delete)
+// Desactivar tag
 const deleteTag = async (req, res) => {
   try {
     const { id } = req.params;
@@ -200,42 +200,11 @@ const deleteTag = async (req, res) => {
       return responseHelper.error(res, 'No tienes permisos para eliminar este tag', 403);
     }
 
-    await Tag.findByIdAndUpdate(id, { is_active: false });
+    await Tag.findByIdAndDelete(id);
 
-    return responseHelper.success(res, null, 'Tag desactivado exitosamente');
+    return responseHelper.success(res, null, 'Tag eliminado exitosamente');
   } catch (error) {
-    return responseHelper.error(res, 'Error al desactivar tag', 500);
-  }
-};
-
-// Reactivar tag
-const reactivateTag = async (req, res) => {
-  try {
-    const { id } = req.params;
-    const user = req.user;
-
-    // Obtener tag actual
-    const tag = await Tag.findById(id).populate('restaurant_id');
-    if (!tag) {
-      return responseHelper.error(res, 'Tag no encontrado', 404);
-    }
-
-    // Verificar permisos
-    if (user.role === 'owner' && tag.restaurant_id.owner_id.toString() !== user._id.toString()) {
-      return responseHelper.error(res, 'No tienes permisos para reactivar este tag', 403);
-    }
-
-    const reactivatedTag = await Tag.findByIdAndUpdate(
-      id,
-      { is_active: true },
-      { new: true }
-    )
-    .populate('restaurant_id', 'name')
-    .populate('created_by', 'name email');
-
-    return responseHelper.success(res, reactivatedTag, 'Tag reactivado exitosamente');
-  } catch (error) {
-    return responseHelper.error(res, 'Error al reactivar tag', 500);
+    return responseHelper.error(res, 'Error al eliminar tag', 500);
   }
 };
 
@@ -245,6 +214,5 @@ module.exports = {
   getAllTags,
   getTagById,
   updateTag,
-  deleteTag,
-  reactivateTag
+  deleteTag
 };

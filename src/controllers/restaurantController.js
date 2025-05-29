@@ -150,12 +150,12 @@ const updateRestaurant = async (req, res) => {
   }
 };
 
-// Desactivar restaurante (soft delete)
+// Desactivar restaurante
 const deleteRestaurant = async (req, res) => {
   try {
     const { id } = req.params;
     
-    const restaurant = await Restaurant.findByIdAndUpdate(id, { is_active: false }, { new: true });
+    const restaurant = await Restaurant.findByIdAndDelete(id);
 
     if (!restaurant) {
       return responseHelper.error(res, 'Restaurante no encontrado', 404);

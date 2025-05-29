@@ -125,7 +125,7 @@ const updateRestaurantTag = async (req, res) => {
   }
 };
 
-// Desactivar tag (soft delete - solo admin)
+// Eliminar tag
 const deleteRestaurantTag = async (req, res) => {
   try {
     const { id } = req.params;
