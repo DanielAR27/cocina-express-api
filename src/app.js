@@ -7,6 +7,7 @@ const userRoutes = require('./routes/userRoutes');
 const restaurantRoutes = require('./routes/restaurantRoutes');
 const restaurantTagRoutes = require('./routes/restaurantTagRoutes');
 const categoryRoutes = require('./routes/categoryRoutes');
+const tagRoutes = require('./routes/tagRoutes');
 
 const app = express();
 
@@ -20,6 +21,7 @@ app.use('/api/users', userRoutes);
 app.use('/api/restaurants', restaurantRoutes);
 app.use('/api/restaurant-tags', restaurantTagRoutes);
 app.use('/api/categories', categoryRoutes);
+app.use('/api/tags', tagRoutes);
 
 // Ruta de prueba
 app.get('/', (req, res) => {
@@ -30,7 +32,8 @@ app.get('/', (req, res) => {
       users: '/api/users',
       restaurants: '/api/restaurants',
       restaurantTags: '/api/restaurant-tags',
-      categories: '/api/categories'
+      categories: '/api/categories',
+      tags: '/api/tags'
     },
     timestamp: new Date().toISOString()
   });
