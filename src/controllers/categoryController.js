@@ -266,6 +266,5 @@ module.exports = {
   getCategoryById,
   updateCategory,
   deleteCategory,
-  reactivateCategory,
   reorderCategories
 };

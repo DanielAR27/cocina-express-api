@@ -149,5 +149,4 @@ module.exports = {
   getAllRestaurantTagsAdmin,
   updateRestaurantTag,
   deleteRestaurantTag,
-  reactivateRestaurantTag
 };
