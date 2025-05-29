@@ -204,42 +204,11 @@ const deleteCategory = async (req, res) => {
       return responseHelper.error(res, 'No tienes permisos para eliminar esta categoría', 403);
     }
 
-    await Category.findByIdAndUpdate(id, { is_active: false });
+    await Category.findByIdAndDelete(id);
 
-    return responseHelper.success(res, null, 'Categoría desactivada exitosamente');
+    return responseHelper.success(res, null, 'Categoría eliminada exitosamente');
   } catch (error) {
-    return responseHelper.error(res, 'Error al desactivar categoría', 500);
-  }
-};
-
-// Reactivar categoría
-const reactivateCategory = async (req, res) => {
-  try {
-    const { id } = req.params;
-    const user = req.user;
-
-    // Obtener categoría actual
-    const category = await Category.findById(id).populate('restaurant_id');
-    if (!category) {
-      return responseHelper.error(res, 'Categoría no encontrada', 404);
-    }
-
-    // Verificar permisos
-    if (user.role === 'owner' && category.restaurant_id.owner_id.toString() !== user._id.toString()) {
-      return responseHelper.error(res, 'No tienes permisos para reactivar esta categoría', 403);
-    }
-
-    const reactivatedCategory = await Category.findByIdAndUpdate(
-      id,
-      { is_active: true },
-      { new: true }
-    )
-    .populate('restaurant_id', 'name')
-    .populate('created_by', 'name email');
-
-    return responseHelper.success(res, reactivatedCategory, 'Categoría reactivada exitosamente');
-  } catch (error) {
-    return responseHelper.error(res, 'Error al reactivar categoría', 500);
+    return responseHelper.error(res, 'Error al eliminar categoría', 500);
   }
 };
 

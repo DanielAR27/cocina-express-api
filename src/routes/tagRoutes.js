@@ -14,6 +14,5 @@ router.get('/', isOwnerOrAdmin, tagController.getAllTags); // Ver todos los tags
 router.get('/:id', tagController.getTagById); // Ver tag específico
 router.put('/:id', isOwnerOrAdmin, tagController.updateTag); // Actualizar tag
 router.delete('/:id', isOwnerOrAdmin, tagController.deleteTag); // Desactivar tag
-router.patch('/:id/reactivate', isOwnerOrAdmin, tagController.reactivateTag); // Reactivar tag
 
 module.exports = router;

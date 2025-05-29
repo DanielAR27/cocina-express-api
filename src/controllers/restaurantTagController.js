@@ -130,40 +130,15 @@ const deleteRestaurantTag = async (req, res) => {
   try {
     const { id } = req.params;
     
-    const tag = await RestaurantTag.findByIdAndUpdate(
-      id, 
-      { is_active: false }, 
-      { new: true }
-    );
+    const tag = await RestaurantTag.findByIdAndUpdate(id);
 
     if (!tag) {
       return responseHelper.error(res, 'Tag no encontrado', 404);
     }
 
-    return responseHelper.success(res, null, 'Tag desactivado exitosamente');
+    return responseHelper.success(res, null, 'Tag eliminado exitosamente');
   } catch (error) {
-    return responseHelper.error(res, 'Error al desactivar tag', 500);
-  }
-};
-
-// Reactivar tag (solo admin)
-const reactivateRestaurantTag = async (req, res) => {
-  try {
-    const { id } = req.params;
-    
-    const tag = await RestaurantTag.findByIdAndUpdate(
-      id, 
-      { is_active: true }, 
-      { new: true }
-    );
-
-    if (!tag) {
-      return responseHelper.error(res, 'Tag no encontrado', 404);
-    }
-
-    return responseHelper.success(res, tag, 'Tag reactivado exitosamente');
-  } catch (error) {
-    return responseHelper.error(res, 'Error al reactivar tag', 500);
+    return responseHelper.error(res, 'Error al eliminar tag', 500);
   }
 };
 

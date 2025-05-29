@@ -15,6 +15,5 @@ router.patch('/restaurant/:restaurant_id/reorder', isOwnerOrAdmin, categoryContr
 router.get('/:id', categoryController.getCategoryById); // Ver categoría específica
 router.put('/:id', isOwnerOrAdmin, categoryController.updateCategory); // Actualizar categoría
 router.delete('/:id', isOwnerOrAdmin, categoryController.deleteCategory); // Desactivar categoría
-router.patch('/:id/reactivate', isOwnerOrAdmin, categoryController.reactivateCategory); // Reactivar categoría
 
 module.exports = router;
