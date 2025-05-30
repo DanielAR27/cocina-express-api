@@ -27,10 +27,6 @@ const toppingSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Tag'
   }],
-  compatible_with: [{
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Product'
-  }],
   nutritional_info: {
     calories: {
       type: Number,

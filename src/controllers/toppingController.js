@@ -74,7 +74,6 @@ const createTopping = async (req, res) => {
       description: description.trim(),
       price,
       tags: tags || [],
-      compatible_with: compatible_with || [],
       nutritional_info: nutritional_info || {},
       is_available: is_available !== undefined ? is_available : true,
       stock_quantity: stock_quantity || 0,
@@ -82,10 +81,18 @@ const createTopping = async (req, res) => {
     });
 
     await topping.save();
+
+    // Actualizar productos compatibles agregando este topping
+    if (compatible_with && compatible_with.length > 0) {
+      await Product.updateMany(
+        { _id: { $in: compatible_with } },
+        { $addToSet: { compatible_toppings: topping._id } }
+      );
+    }
+
     await topping.populate([
       { path: 'restaurant_id', select: 'name' },
       { path: 'tags', select: 'name' },
-      { path: 'compatible_with', select: 'name' },
       { path: 'created_by', select: 'name email' }
     ]);
 
@@ -122,15 +129,25 @@ const getToppingsByRestaurant = async (req, res) => {
     if (is_available !== undefined) filter.is_available = is_available === 'true';
     
     // Filtrar por producto compatible si se especifica
+    // Buscar toppings que estén en compatible_toppings del producto
+    let toppings;
     if (compatible_with_product) {
-      filter.compatible_with = { $in: [compatible_with_product] };
+      const product = await Product.findById(compatible_with_product).select('compatible_toppings');
+      if (product && product.compatible_toppings.length > 0) {
+        filter._id = { $in: product.compatible_toppings };
+        toppings = await Topping.find(filter)
+          .populate('tags', 'name')
+          .populate('created_by', 'name')
+          .sort({ name: 1 });
+      } else {
+        toppings = []; // No hay toppings compatibles
+      }
+    } else {
+      toppings = await Topping.find(filter)
+        .populate('tags', 'name')
+        .populate('created_by', 'name')
+        .sort({ name: 1 });
     }
-
-    const toppings = await Topping.find(filter)
-      .populate('tags', 'name')
-      .populate('compatible_with', 'name')
-      .populate('created_by', 'name')
-      .sort({ name: 1 });
 
     return responseHelper.success(res, toppings, 'Toppings obtenidos exitosamente');
   } catch (error) {
@@ -154,7 +171,6 @@ const getAllToppings = async (req, res) => {
     const toppings = await Topping.find(filter)
       .populate('restaurant_id', 'name')
       .populate('tags', 'name')
-      .populate('compatible_with', 'name')
       .populate('created_by', 'name email')
       .sort({ restaurant_id: 1, name: 1 });
 
@@ -172,14 +188,24 @@ const getToppingById = async (req, res) => {
     const topping = await Topping.findById(id)
       .populate('restaurant_id', 'name')
       .populate('tags', 'name')
-      .populate('compatible_with', 'name')
       .populate('created_by', 'name email');
 
     if (!topping) {
       return responseHelper.error(res, 'Topping no encontrado', 404);
     }
 
-    return responseHelper.success(res, topping, 'Topping encontrado');
+    // Obtener productos compatibles
+    const compatibleProducts = await Product.find({
+      compatible_toppings: topping._id
+    }).select('name');
+
+    // Agregar productos compatibles al resultado
+    const result = {
+      ...topping.toObject(),
+      compatible_with: compatibleProducts
+    };
+
+    return responseHelper.success(res, result, 'Topping encontrado');
   } catch (error) {
     return responseHelper.error(res, 'Error al obtener topping', 500);
   }
@@ -242,19 +268,49 @@ const updateTopping = async (req, res) => {
       }
     }
 
+    // Obtener productos compatibles actuales para comparar cambios
+    const currentCompatibleProducts = await Product.find({
+      compatible_toppings: topping._id
+    }).select('_id');
+    const currentProductIds = currentCompatibleProducts.map(p => p._id.toString());
+    const newProductIds = updates.compatible_with || [];
+
     // Limpiar campos de texto
     if (updates.name) updates.name = updates.name.trim();
     if (updates.description) updates.description = updates.description.trim();
 
+    // Remover compatible_with del updates ya que no existe en el modelo
+    const { compatible_with, ...toppingUpdates } = updates;
+
     const updatedTopping = await Topping.findByIdAndUpdate(
       id,
-      updates,
+      toppingUpdates,
       { new: true, runValidators: true }
     )
     .populate('restaurant_id', 'name')
     .populate('tags', 'name')
-    .populate('compatible_with', 'name')
     .populate('created_by', 'name email');
+
+    // Actualizar relaciones de productos
+    if (compatible_with !== undefined) {
+      // Remover topping de productos que ya no son compatibles
+      const productsToRemove = currentProductIds.filter(pid => !newProductIds.includes(pid));
+      if (productsToRemove.length > 0) {
+        await Product.updateMany(
+          { _id: { $in: productsToRemove } },
+          { $pull: { compatible_toppings: topping._id } }
+        );
+      }
+
+      // Agregar topping a productos nuevos
+      const productsToAdd = newProductIds.filter(pid => !currentProductIds.includes(pid));
+      if (productsToAdd.length > 0) {
+        await Product.updateMany(
+          { _id: { $in: productsToAdd } },
+          { $addToSet: { compatible_toppings: topping._id } }
+        );
+      }
+    }
 
     return responseHelper.success(res, updatedTopping, 'Topping actualizado exitosamente');
   } catch (error) {
@@ -285,6 +341,12 @@ const deleteTopping = async (req, res) => {
     }
 
     await Topping.findByIdAndDelete(id);
+
+    // Remover topping de todos los productos que lo referencian
+    await Product.updateMany(
+      { compatible_toppings: topping._id },
+      { $pull: { compatible_toppings: topping._id } }
+    );
 
     return responseHelper.success(res, null, 'Topping eliminado exitosamente');
   } catch (error) {

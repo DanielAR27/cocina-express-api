@@ -40,7 +40,7 @@ const productSchema = new mongoose.Schema({
   }],
   compatible_toppings: [{
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'Topping' // Esto será para cuando implementemos toppings
+    ref: 'Topping'
   }],
   nutritional_info: {
     calories: {
