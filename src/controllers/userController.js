@@ -171,6 +171,43 @@ const deleteUser = async (req, res) => {
     return responseHelper.error(res, 'Error al desactivar usuario', 500);
   }
 };
+// Actualizar perfil propio (PUT /me)
+const updateProfile = async (req, res) => {
+  try {
+    // Si tienes autenticación, usa req.user._id. Si no, usa el id que venga en el body.
+    const userId = req.user?._id || req.body.userId || req.body._id;
+    if (!userId) {
+      return responseHelper.error(res, 'ID de usuario requerido', 400);
+    }
+
+    const updates = req.body;
+
+    // No permitir actualizar campos críticos
+    delete updates.google_id;
+    delete updates.email;
+    delete updates.user_id;
+    delete updates.created_at;
+    delete updates.updated_at;
+    delete updates.role;
+
+    const user = await User.findByIdAndUpdate(userId, updates, {
+      new: true,
+      runValidators: true
+    });
+
+    if (!user) {
+      return responseHelper.error(res, 'Usuario no encontrado', 404);
+    }
+
+    return responseHelper.success(res, user, 'Perfil actualizado exitosamente');
+  } catch (error) {
+    if (error.name === 'ValidationError') {
+      const errors = Object.values(error.errors).map(err => err.message);
+      return responseHelper.validationError(res, errors);
+    }
+    return responseHelper.error(res, 'Error al actualizar perfil', 500);
+  }
+};
 
 module.exports = {
   createUser,
@@ -179,5 +216,6 @@ module.exports = {
   getAllUsers,
   getOwners,
   updateUser,
-  deleteUser
+  deleteUser,
+  updateProfile
 };

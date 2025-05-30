@@ -13,5 +13,6 @@ router.get('/', isAdmin, userController.getAllUsers); // Solo admin puede ver to
 router.get('/owners', isAdmin, userController.getOwners); // Solo admin puede ver owners (ahora GET con query)
 router.put('/:id', isOwnerOrSelf, userController.updateUser); // Solo el mismo usuario o admin
 router.delete('/:id', isOwnerOrSelf, userController.deleteUser); // Solo el mismo usuario o admin
+router.put('/me', userController.updateProfile);
 
 module.exports = router;
