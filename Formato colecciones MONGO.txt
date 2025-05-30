@@ -83,10 +83,7 @@
 {
   "_id": "ObjectId",
   "restaurant_id": "ObjectId",
-  "name": "Estilo Casero",
-  "type": "preparation", // "health", "dietary", "spice_level", "preparation", "custom"
-  "color": "#FF9800", // colores de la marca del restaurante
-  "description": "Preparado con amor como en casa",
+  "name": "Saludable", // "Saluble", "Comida rápida", "Sin gluten", etc...
   "created_by": "ObjectId", // owner del restaurante
   "created_at": "2025-05-23T10:00:00Z",
   "is_active": true
@@ -127,7 +124,6 @@
   "description": "Torta adicional de carne 100% res",
   "price": 1200,
   "tags": ["ObjectId"], // referencias a tags del mismo restaurante
-  "compatible_with": ["ObjectId", "ObjectId"], // productos compatibles del mismo restaurante
   "nutritional_info": {
     "calories": 180,
     "protein": 15,

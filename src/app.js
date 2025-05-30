@@ -6,6 +6,10 @@ require('dotenv').config();
 const userRoutes = require('./routes/userRoutes');
 const restaurantRoutes = require('./routes/restaurantRoutes');
 const restaurantTagRoutes = require('./routes/restaurantTagRoutes');
+const categoryRoutes = require('./routes/categoryRoutes');
+const tagRoutes = require('./routes/tagRoutes');
+const productRoutes = require('./routes/productRoutes');
+const toppingRoutes = require('./routes/toppingRoutes');
 
 const app = express();
 
@@ -18,6 +22,10 @@ app.use(express.urlencoded({ extended: true })); // Parse URL-encoded bodies
 app.use('/api/users', userRoutes);
 app.use('/api/restaurants', restaurantRoutes);
 app.use('/api/restaurant-tags', restaurantTagRoutes);
+app.use('/api/categories', categoryRoutes);
+app.use('/api/tags', tagRoutes);
+app.use('/api/products', productRoutes); 
+app.use('/api/toppings', toppingRoutes);
 
 // Ruta de prueba
 app.get('/', (req, res) => {
@@ -27,7 +35,11 @@ app.get('/', (req, res) => {
     endpoints: {
       users: '/api/users',
       restaurants: '/api/restaurants',
-      restaurantTags: '/api/restaurant-tags'
+      restaurantTags: '/api/restaurant-tags',
+      categories: '/api/categories',
+      tags: '/api/tags',
+      products: '/api/products',
+      toppings: '/api/toppings'
     },
     timestamp: new Date().toISOString()
   });
