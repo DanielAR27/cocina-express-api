@@ -174,25 +174,25 @@ const deleteUser = async (req, res) => {
 // Actualizar perfil propio (PUT /me)
 const updateProfile = async (req, res) => {
   try {
-    // Si tienes autenticación, usa req.user._id. Si no, usa el id que venga en el body.
-    const userId = req.user?._id || req.body.userId || req.body._id;
+    console.log('BODY RECIBIDO:', req.body);
+
+    // Obtener ID del usuario desde varias fuentes (en orden de prioridad)
+    const userId = req.body._id || req.body.userId || req.user?._id;
+
     if (!userId) {
-      return responseHelper.error(res, 'ID de usuario requerido', 400);
+      return responseHelper.error(res, 'ID de usuario requerido en body, header o query', 400);
     }
 
-    const updates = req.body;
+    const updates = { ...req.body };
 
-    // No permitir actualizar campos críticos
-    delete updates.google_id;
-    delete updates.email;
-    delete updates.user_id;
-    delete updates.created_at;
-    delete updates.updated_at;
-    delete updates.role;
+    // Evitar cambios no permitidos
+    const camposNoPermitidos = ['google_id', 'email', 'user_id', 'created_at', 'updated_at', 'role'];
+    camposNoPermitidos.forEach(campo => delete updates[campo]);
 
+    // Buscar y actualizar el usuario
     const user = await User.findByIdAndUpdate(userId, updates, {
       new: true,
-      runValidators: true
+      runValidators: true,
     });
 
     if (!user) {
@@ -201,10 +201,13 @@ const updateProfile = async (req, res) => {
 
     return responseHelper.success(res, user, 'Perfil actualizado exitosamente');
   } catch (error) {
+    console.error('Error en updateProfile:', error);
+    
     if (error.name === 'ValidationError') {
       const errors = Object.values(error.errors).map(err => err.message);
       return responseHelper.validationError(res, errors);
     }
+
     return responseHelper.error(res, 'Error al actualizar perfil', 500);
   }
 };
