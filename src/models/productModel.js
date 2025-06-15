@@ -42,6 +42,10 @@ const productSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Topping'
   }],
+  base_ingredients: [{
+  type: String,
+  trim: true
+  }],
   nutritional_info: {
     calories: {
       type: Number,
