@@ -176,11 +176,12 @@ const getAllProducts = async (req, res) => {
       .populate('created_by', 'name email')
       .sort({ restaurant_id: 1, category_id: 1, name: 1 });
 
-    console.log('Product retrieved for detail:', product);  
-    console.log('Base ingredients in retrieved product:', product.base_ingredients);
+    console.log('Product retrieved for detail:', Product);  
+    console.log('Base ingredients in retrieved product:', Product.base_ingredients);
 
     return responseHelper.success(res, products, 'Productos obtenidos exitosamente');
   } catch (error) {
+    console.error('Error in getAllProducts:', error);
     return responseHelper.error(res, 'Error al obtener productos', 500);
   }
 };
