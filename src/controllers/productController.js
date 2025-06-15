@@ -7,6 +7,12 @@ const responseHelper = require('../utils/responseHelper');
 // Crear nuevo producto
 const createProduct = async (req, res) => {
   try {
+    console.log('=== DEBUG CREATE PRODUCT ===');
+    console.log('Full request body:', req.body);
+    console.log('Base ingredients received:', req.body.base_ingredients);
+
+
+
     const { 
       restaurant_id, 
       name, 
@@ -15,12 +21,14 @@ const createProduct = async (req, res) => {
       price,
       image,
       tags,
+      base_ingredients,
       nutritional_info,
       preparation_time,
       is_available,
       is_featured,
       stock_quantity
     } = req.body;
+    console.log('Extracted base_ingredients:', base_ingredients);
     const user = req.user;
 
     // Validaciones básicas
@@ -77,6 +85,7 @@ const createProduct = async (req, res) => {
       price,
       image,
       tags: tags || [],
+      base_ingredients: base_ingredients || [], 
       nutritional_info: nutritional_info || {},
       preparation_time: preparation_time || 15,
       is_available: is_available !== undefined ? is_available : true,
@@ -85,7 +94,10 @@ const createProduct = async (req, res) => {
       created_by: user._id
     });
 
-    await product.save();
+    console.log('Product before save:', product);
+    const savedProduct = await product.save();
+    console.log('Product after save:', savedProduct);
+
     await product.populate([
       { path: 'restaurant_id', select: 'name' },
       { path: 'category_id', select: 'name' },
@@ -196,7 +208,20 @@ const getProductById = async (req, res) => {
 const updateProduct = async (req, res) => {
   try {
     const { id } = req.params;
-    const updates = req.body;
+    const { 
+      category_id, 
+      name, 
+      description, 
+      price,
+      image,
+      tags,
+      base_ingredients,        // ← AGREGADO
+      nutritional_info,
+      preparation_time,
+      is_available,
+      is_featured,
+      stock_quantity
+    } = req.body;
     const user = req.user;
 
     // Obtener producto actual
@@ -210,15 +235,11 @@ const updateProduct = async (req, res) => {
       return responseHelper.error(res, 'No tienes permisos para editar este producto', 403);
     }
 
-    // No permitir cambiar restaurant_id ni created_by
-    delete updates.restaurant_id;
-    delete updates.created_by;
-
     // Verificar nombre único si se está cambiando
-    if (updates.name && updates.name.trim() !== product.name) {
+    if (name && name.trim() !== product.name) {
       const existingProduct = await Product.findOne({
         restaurant_id: product.restaurant_id._id,
-        name: { $regex: new RegExp('^' + updates.name.trim() + '$', 'i') },
+        name: { $regex: new RegExp('^' + name.trim() + '$', 'i') },
         _id: { $ne: id }
       });
 
@@ -228,9 +249,9 @@ const updateProduct = async (req, res) => {
     }
 
     // Verificar categoría si se está cambiando
-    if (updates.category_id) {
+    if (category_id) {
       const category = await Category.findOne({ 
-        _id: updates.category_id, 
+        _id: category_id, 
         restaurant_id: product.restaurant_id._id 
       });
       if (!category) {
@@ -239,23 +260,35 @@ const updateProduct = async (req, res) => {
     }
 
     // Verificar tags si se están cambiando
-    if (updates.tags && updates.tags.length > 0) {
+    if (tags && tags.length > 0) {
       const validTags = await Tag.find({
-        _id: { $in: updates.tags },
+        _id: { $in: tags },
         restaurant_id: product.restaurant_id._id
       });
-      if (validTags.length !== updates.tags.length) {
+      if (validTags.length !== tags.length) {
         return responseHelper.error(res, 'Algunos tags no son válidos o no pertenecen a este restaurante', 400);
       }
     }
 
-    // Limpiar campos de texto
-    if (updates.name) updates.name = updates.name.trim();
-    if (updates.description) updates.description = updates.description.trim();
+    // Construir objeto de actualización
+    const updateData = {};
+    
+    if (category_id) updateData.category_id = category_id;
+    if (name) updateData.name = name.trim();
+    if (description) updateData.description = description.trim();
+    if (price !== undefined) updateData.price = price;
+    if (image) updateData.image = image;
+    if (tags) updateData.tags = tags;
+    if (base_ingredients !== undefined) updateData.base_ingredients = base_ingredients || [];  // ← AGREGADO
+    if (nutritional_info) updateData.nutritional_info = nutritional_info;
+    if (preparation_time !== undefined) updateData.preparation_time = preparation_time;
+    if (is_available !== undefined) updateData.is_available = is_available;
+    if (is_featured !== undefined) updateData.is_featured = is_featured;
+    if (stock_quantity !== undefined) updateData.stock_quantity = stock_quantity;
 
     const updatedProduct = await Product.findByIdAndUpdate(
       id,
-      updates,
+      updateData,
       { new: true, runValidators: true }
     )
     .populate('restaurant_id', 'name')
@@ -272,70 +305,4 @@ const updateProduct = async (req, res) => {
 
     return responseHelper.error(res, 'Error al actualizar producto', 500);
   }
-};
-
-// Eliminar producto (hard delete)
-const deleteProduct = async (req, res) => {
-  try {
-    const { id } = req.params;
-    const user = req.user;
-
-    // Obtener producto actual
-    const product = await Product.findById(id).populate('restaurant_id');
-    if (!product) {
-      return responseHelper.error(res, 'Producto no encontrado', 404);
-    }
-
-    // Verificar permisos
-    if (user.role === 'owner' && product.restaurant_id.owner_id.toString() !== user._id.toString()) {
-      return responseHelper.error(res, 'No tienes permisos para eliminar este producto', 403);
-    }
-
-    await Product.findByIdAndDelete(id);
-
-    return responseHelper.success(res, null, 'Producto eliminado exitosamente');
-  } catch (error) {
-    return responseHelper.error(res, 'Error al eliminar producto', 500);
-  }
-};
-
-// Buscar productos por nombre (público)
-const searchProducts = async (req, res) => {
-  try {
-    const { q, restaurant_id } = req.query;
-
-    if (!q || q.trim().length < 2) {
-      return responseHelper.error(res, 'La búsqueda debe tener al menos 2 caracteres', 400);
-    }
-
-    let filter = {
-      name: { $regex: q.trim(), $options: 'i' },
-      is_available: true
-    };
-
-    if (restaurant_id) {
-      filter.restaurant_id = restaurant_id;
-    }
-
-    const products = await Product.find(filter)
-      .populate('restaurant_id', 'name')
-      .populate('category_id', 'name')
-      .populate('tags', 'name')
-      .limit(20)
-      .sort({ is_featured: -1, name: 1 });
-
-    return responseHelper.success(res, products, 'Productos encontrados');
-  } catch (error) {
-    return responseHelper.error(res, 'Error en la búsqueda', 500);
-  }
-};
-
-module.exports = {
-  createProduct,
-  getProductsByRestaurant,
-  getAllProducts,
-  getProductById,
-  updateProduct,
-  deleteProduct,
-  searchProducts
 };
