@@ -45,6 +45,7 @@ const productSchema = new mongoose.Schema({
   base_ingredients: [{
     type: String,
     trim: true
+    
   }],
   nutritional_info: {
     calories: {
