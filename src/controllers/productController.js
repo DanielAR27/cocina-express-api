@@ -11,6 +11,11 @@ const createProduct = async (req, res) => {
     console.log('Full request body:', req.body);
     console.log('Base ingredients received:', req.body.base_ingredients);
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 731fef712216f49ca948c5c3ff22227fe5023721
     const { 
       restaurant_id, 
       name, 
@@ -96,8 +101,12 @@ const createProduct = async (req, res) => {
     const savedProduct = await product.save();
     console.log('Product after save:', savedProduct);
 
+<<<<<<< HEAD
     // Hacer populate del producto guardado
     await savedProduct.populate([
+=======
+    await product.populate([
+>>>>>>> 731fef712216f49ca948c5c3ff22227fe5023721
       { path: 'restaurant_id', select: 'name' },
       { path: 'category_id', select: 'name' },
       { path: 'tags', select: 'name' },
@@ -214,14 +223,22 @@ const updateProduct = async (req, res) => {
       price,
       image,
       tags,
+<<<<<<< HEAD
       base_ingredients,        
+=======
+      base_ingredients,        // ← AGREGADO
+>>>>>>> 731fef712216f49ca948c5c3ff22227fe5023721
       nutritional_info,
       preparation_time,
       is_available,
       is_featured,
       stock_quantity
     } = req.body;
+<<<<<<< HEAD
     const user = req.user;  // ← AGREGADO
+=======
+    const user = req.user;
+>>>>>>> 731fef712216f49ca948c5c3ff22227fe5023721
 
     // Obtener producto actual
     const product = await Product.findById(id).populate('restaurant_id');
@@ -278,7 +295,11 @@ const updateProduct = async (req, res) => {
     if (price !== undefined) updateData.price = price;
     if (image) updateData.image = image;
     if (tags) updateData.tags = tags;
+<<<<<<< HEAD
     if (base_ingredients !== undefined) updateData.base_ingredients = base_ingredients || [];
+=======
+    if (base_ingredients !== undefined) updateData.base_ingredients = base_ingredients || [];  // ← AGREGADO
+>>>>>>> 731fef712216f49ca948c5c3ff22227fe5023721
     if (nutritional_info) updateData.nutritional_info = nutritional_info;
     if (preparation_time !== undefined) updateData.preparation_time = preparation_time;
     if (is_available !== undefined) updateData.is_available = is_available;
@@ -304,70 +325,4 @@ const updateProduct = async (req, res) => {
 
     return responseHelper.error(res, 'Error al actualizar producto', 500);
   }
-};
-
-// Eliminar producto (hard delete)
-const deleteProduct = async (req, res) => {
-  try {
-    const { id } = req.params;
-    const user = req.user;
-
-    // Obtener producto actual
-    const product = await Product.findById(id).populate('restaurant_id');
-    if (!product) {
-      return responseHelper.error(res, 'Producto no encontrado', 404);
-    }
-
-    // Verificar permisos
-    if (user.role === 'owner' && product.restaurant_id.owner_id.toString() !== user._id.toString()) {
-      return responseHelper.error(res, 'No tienes permisos para eliminar este producto', 403);
-    }
-
-    await Product.findByIdAndDelete(id);
-
-    return responseHelper.success(res, null, 'Producto eliminado exitosamente');
-  } catch (error) {
-    return responseHelper.error(res, 'Error al eliminar producto', 500);
-  }
-};
-
-// Buscar productos por nombre (público)
-const searchProducts = async (req, res) => {
-  try {
-    const { q, restaurant_id } = req.query;
-
-    if (!q || q.trim().length < 2) {
-      return responseHelper.error(res, 'La búsqueda debe tener al menos 2 caracteres', 400);
-    }
-
-    let filter = {
-      name: { $regex: q.trim(), $options: 'i' },
-      is_available: true
-    };
-
-    if (restaurant_id) {
-      filter.restaurant_id = restaurant_id;
-    }
-
-    const products = await Product.find(filter)
-      .populate('restaurant_id', 'name')
-      .populate('category_id', 'name')
-      .populate('tags', 'name')
-      .limit(20)
-      .sort({ is_featured: -1, name: 1 });
-
-    return responseHelper.success(res, products, 'Productos encontrados');
-  } catch (error) {
-    return responseHelper.error(res, 'Error en la búsqueda', 500);
-  }
-};
-
-module.exports = {
-  createProduct,
-  getProductsByRestaurant,
-  getAllProducts,
-  getProductById,
-  updateProduct,
-  deleteProduct,
-  searchProducts
 };
