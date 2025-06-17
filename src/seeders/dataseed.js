@@ -57,6 +57,7 @@ const seedData = {
     {
       name: 'Pizzería Nonna Rosa',
       description: 'Auténtica pizza italiana con ingredientes frescos importados',
+      banner: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=800&h=300&fit=crop',
       contact: {
         phone: '2222-3456',
         email: 'info@nonnarosa.cr'
@@ -80,6 +81,7 @@ const seedData = {
     {
       name: 'El Parrillero',
       description: 'Las mejores hamburguesas artesanales de Costa Rica',
+      banner: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800&h=300&fit=crop',
       contact: {
         phone: '2234-5678',
         email: 'pedidos@elparrillero.cr'
@@ -103,6 +105,8 @@ const seedData = {
     {
       name: 'Sushi Bar Sakura',
       description: 'Sushi fresco y tradicional japonés en el corazón de San José',
+      banner: 'https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?w=800&h=300&fit=crop',
+
       contact: {
         phone: '2245-6789',
         email: 'reservas@sakura.cr'
@@ -126,6 +130,8 @@ const seedData = {
     {
       name: 'Café del Volcán',
       description: 'Café gourmet costarricense con repostería artesanal',
+      banner: 'https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=800&h=300&fit=crop',
+
       contact: {
         phone: '2256-7890',
         email: 'hola@cafedelvolcan.cr'
@@ -149,6 +155,8 @@ const seedData = {
     {
       name: 'Tacos & Más',
       description: 'Auténtica comida mexicana con salsas caseras',
+      banner: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=800&h=300&fit=crop',
+
       contact: {
         phone: '2267-8901',
         email: 'pedidos@tacosymas.cr'
@@ -172,6 +180,8 @@ const seedData = {
     {
       name: 'Dragón Dorado',
       description: 'Comida china tradicional y moderna',
+      banner: 'https://images.unsplash.com/photo-1582878826629-29b7ad1cdc43?w=800&h=300&fit=crop',
+
       contact: {
         phone: '2278-9012',
         email: 'info@dragondorado.cr'
@@ -195,6 +205,8 @@ const seedData = {
     {
       name: 'Curry House',
       description: 'Sabores auténticos de la India con especias importadas',
+      banner: 'https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=800&h=300&fit=crop',
+
       contact: {
         phone: '2289-0123',
         email: 'reservas@curryhouse.cr'
@@ -218,6 +230,8 @@ const seedData = {
     {
       name: 'Green Garden',
       description: 'Restaurante 100% vegetariano con opciones veganas',
+      banner: 'https://images.unsplash.com/photo-1540420773420-3366772f4999?w=800&h=300&fit=crop',
+
       contact: {
         phone: '2290-1234',
         email: 'hola@greengarden.cr'
@@ -241,6 +255,8 @@ const seedData = {
     {
       name: 'Wings Express',
       description: 'Alitas picantes y comida rápida americana',
+      banner: 'https://images.unsplash.com/photo-1608039829572-78524f79c4c7?w=800&h=300&fit=crop',
+
       contact: {
         phone: '2201-2345',
         email: 'pedidos@wingsexpress.cr'
@@ -264,6 +280,8 @@ const seedData = {
     {
       name: 'Dulce Tentación',
       description: 'Repostería artesanal y postres gourmet',
+      banner: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=800&h=300&fit=crop',
+
       contact: {
         phone: '2212-3456',
         email: 'info@dulcetentacion.cr'
@@ -287,6 +305,8 @@ const seedData = {
     {
       name: 'Mariscos del Pacífico',
       description: 'Pescados y mariscos frescos del Pacífico costarricense',
+      banner: 'https://images.unsplash.com/photo-1544943910-4c1dc44aab44?w=800&h=300&fit=crop',
+
       contact: {
         phone: '2223-4567',
         email: 'ventas@mariscospacifico.cr'
@@ -310,6 +330,8 @@ const seedData = {
     {
       name: 'Bistro La Parisienne',
       description: 'Cocina francesa auténtica en el corazón de San José',
+      banner: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&h=300&fit=crop',
+
       contact: {
         phone: '2234-5678',
         email: 'reservas@laparisienne.cr'
@@ -333,6 +355,8 @@ const seedData = {
     {
       name: 'Churrascaria Ipanema',
       description: 'Carnes brasileñas a la parrilla con buffet de ensaladas',
+      banner: 'https://images.unsplash.com/photo-1558030006-450675393462?w=800&h=300&fit=crop',
+
       contact: {
         phone: '2245-6789',
         email: 'info@ipanema.cr'
@@ -356,6 +380,8 @@ const seedData = {
     {
       name: 'Lima Fusión',
       description: 'Cocina peruana moderna con toques contemporáneos',
+      banner: 'https://images.unsplash.com/photo-1571919743851-c8ba25d226f0?w=800&h=300&fit=crop',
+
       contact: {
         phone: '2256-7890',
         email: 'pedidos@limafusion.cr'
@@ -379,6 +405,8 @@ const seedData = {
     {
       name: 'Oliva Mediterránea',
       description: 'Sabores del Mediterráneo con aceite de oliva premium',
+      banner: 'https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=800&h=300&fit=crop',
+
       contact: {
         phone: '2267-8901',
         email: 'hola@olivamed.cr'
@@ -402,6 +430,8 @@ const seedData = {
     {
       name: 'Al-Habibi',
       description: 'Cocina árabe tradicional con especias importadas',
+      banner: 'https://images.unsplash.com/photo-1574653969542-3d33002b9b4a?w=800&h=300&fit=crop',
+
       contact: {
         phone: '2278-9012',
         email: 'reservas@alhabibi.cr'
@@ -425,6 +455,8 @@ const seedData = {
     {
       name: 'Seoul Kitchen',
       description: 'Auténtica comida coreana con BBQ y kimchi casero',
+      banner: 'https://images.unsplash.com/photo-1590736969955-71cc94901144?w=800&h=300&fit=crop',
+
       contact: {
         phone: '2289-0123',
         email: 'info@seoulkitchen.cr'
@@ -448,6 +480,8 @@ const seedData = {
     {
       name: 'Fusion 360',
       description: 'Cocina de fusión internacional con técnicas modernas',
+      banner: 'https://images.unsplash.com/photo-1551218808-94e220e084d2?w=800&h=300&fit=crop',
+
       contact: {
         phone: '2290-1234',
         email: 'chef@fusion360.cr'
@@ -471,6 +505,8 @@ const seedData = {
     {
       name: 'Mercado Gastronómico',
       description: 'Food hall con múltiples opciones gourmet bajo un techo',
+      banner: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&h=300&fit=crop',
+
       contact: {
         phone: '2201-2345',
         email: 'contacto@mercadogastro.cr'
@@ -494,6 +530,7 @@ const seedData = {
     {
       name: 'Soda La Típica',
       description: 'Comida tradicional costarricense casera y auténtica',
+      banner: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&h=300&fit=crop',
       contact: {
         phone: '2212-3456',
         email: 'info@sodatipica.cr'
@@ -696,6 +733,8 @@ const seedData = {
         {
           name: 'Pizza Margarita',
           description: 'Pizza clásica con salsa de tomate, mozzarella fresca y albahaca',
+          image: 'https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?w=600&h=400&fit=crop',
+
           price: 4500,
           base_ingredients: ['Masa de pizza', 'Salsa de tomate', 'Mozzarella', 'Albahaca fresca', 'Aceite de oliva'],
           preparation_time: 20,
@@ -706,6 +745,8 @@ const seedData = {
         {
           name: 'Pizza Pepperoni',
           description: 'Pizza tradicional con pepperoni y mozzarella',
+          image: 'https://images.unsplash.com/photo-1628840042765-356cda07504e?w=600&h=400&fit=crop',
+
           price: 5200,
           base_ingredients: ['Masa de pizza', 'Salsa de tomate', 'Mozzarella', 'Pepperoni'],
           preparation_time: 22,
@@ -715,6 +756,7 @@ const seedData = {
         {
           name: 'Pizza Hawaiana',
           description: 'Pizza con jamón, piña y mozzarella',
+          image: 'https://placehold.co/600x400/FF6347/FFFFFF?text=Pizza+Hawaiana',
           price: 5800,
           base_ingredients: ['Masa de pizza', 'Salsa de tomate', 'Mozzarella', 'Jamón', 'Piña'],
           preparation_time: 25,
@@ -726,6 +768,8 @@ const seedData = {
         {
           name: 'Pizza Quattro Formaggi',
           description: 'Pizza de cuatro quesos: mozzarella, gorgonzola, parmesano y ricotta',
+          image: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600&h=400&fit=crop',
+
           price: 6500,
           base_ingredients: ['Masa de pizza', 'Salsa blanca', 'Mozzarella', 'Gorgonzola', 'Parmesano', 'Ricotta'],
           preparation_time: 25,
@@ -736,6 +780,7 @@ const seedData = {
         {
           name: 'Pizza Prosciutto e Rúcula',
           description: 'Pizza con prosciutto, rúcula fresca y parmesano',
+          image: 'https://images.unsplash.com/photo-1571997478779-2adcbbe9ab2f?w=600&h=400&fit=crop',
           price: 7200,
           base_ingredients: ['Masa de pizza', 'Salsa de tomate', 'Mozzarella', 'Prosciutto', 'Rúcula', 'Parmesano'],
           preparation_time: 28,
@@ -749,6 +794,7 @@ const seedData = {
         {
           name: 'Hamburguesa Clásica',
           description: 'Carne de res, lechuga, tomate, cebolla y salsa especial',
+          image: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&h=400&fit=crop',
           price: 3800,
           base_ingredients: ['Pan de hamburguesa', 'Carne de res 150g', 'Lechuga', 'Tomate', 'Cebolla', 'Salsa especial'],
           preparation_time: 15,
@@ -759,6 +805,7 @@ const seedData = {
         {
           name: 'Hamburguesa con Queso',
           description: 'Nuestra clásica con queso cheddar derretido',
+          image: 'https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?w=600&h=400&fit=crop',
           price: 4200,
           base_ingredients: ['Pan de hamburguesa', 'Carne de res 150g', 'Queso cheddar', 'Lechuga', 'Tomate', 'Cebolla'],
           preparation_time: 15,
@@ -768,6 +815,8 @@ const seedData = {
         {
           name: 'Hamburguesa BBQ',
           description: 'Con salsa barbacoa, cebolla caramelizada y aros de cebolla',
+          image: 'https://images.unsplash.com/photo-1553979459-d2229ba7433a?w=600&h=400&fit=crop',
+
           price: 4800,
           base_ingredients: ['Pan de hamburguesa', 'Carne de res 150g', 'Salsa BBQ', 'Cebolla caramelizada', 'Aros de cebolla'],
           preparation_time: 18,
@@ -779,6 +828,8 @@ const seedData = {
         {
           name: 'Hamburguesa Gourmet',
           description: 'Carne Angus, queso brie, rúcula y cebolla morada',
+          image: 'https://images.unsplash.com/photo-1586190848861-99aa4a171e90?w=600&h=400&fit=crop',
+
           price: 6200,
           base_ingredients: ['Pan brioche', 'Carne Angus 200g', 'Queso brie', 'Rúcula', 'Cebolla morada', 'Mayonesa de ajo'],
           preparation_time: 22,
@@ -789,6 +840,7 @@ const seedData = {
         {
           name: 'Hamburguesa del Chef',
           description: 'Doble carne, bacon, queso suizo y salsa secreta',
+          image: 'https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?w=600&h=400&fit=crop',
           price: 7500,
           base_ingredients: ['Pan artesanal', 'Doble carne 300g', 'Bacon', 'Queso suizo', 'Salsa secreta', 'Tomate', 'Lechuga'],
           preparation_time: 25,
@@ -802,6 +854,8 @@ const seedData = {
         {
           name: 'California Roll',
           description: 'Cangrejo, aguacate y pepino con sésamo',
+          image: 'https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?w=600&h=400&fit=crop',
+
           price: 3200,
           base_ingredients: ['Arroz sushi', 'Nori', 'Cangrejo', 'Aguacate', 'Pepino', 'Sésamo', 'Mayonesa'],
           preparation_time: 12,
@@ -812,6 +866,8 @@ const seedData = {
         {
           name: 'Philadelphia Roll',
           description: 'Salmón, queso crema y aguacate',
+          image: 'https://images.unsplash.com/photo-1617196034796-73dfa7b1fd56?w=600&h=400&fit=crop',
+
           price: 3800,
           base_ingredients: ['Arroz sushi', 'Nori', 'Salmón fresco', 'Queso crema', 'Aguacate'],
           preparation_time: 15,
@@ -821,6 +877,8 @@ const seedData = {
         {
           name: 'Spicy Tuna Roll',
           description: 'Atún picante con pepino y sésamo',
+          image: 'https://images.unsplash.com/photo-1563612116625-3012372fccce?w=600&h=400&fit=crop',
+
           price: 4200,
           base_ingredients: ['Arroz sushi', 'Nori', 'Atún fresco', 'Salsa picante', 'Pepino', 'Sésamo'],
           preparation_time: 12,
@@ -832,6 +890,8 @@ const seedData = {
         {
           name: 'Nigiri de Salmón',
           description: 'Salmón fresco sobre arroz sazonado (2 piezas)',
+          image: 'https://images.unsplash.com/photo-1611143669185-af224c5e3252?w=600&h=400&fit=crop',
+
           price: 2800,
           base_ingredients: ['Arroz sushi', 'Salmón fresco', 'Wasabi'],
           preparation_time: 8,
@@ -842,6 +902,7 @@ const seedData = {
         {
           name: 'Nigiri de Atún',
           description: 'Atún fresco sobre arroz sazonado (2 piezas)',
+          image: 'https://images.unsplash.com/photo-1609501676725-7186f932a4de?w=600&h=400&fit=crop',
           price: 3200,
           base_ingredients: ['Arroz sushi', 'Atún fresco', 'Wasabi'],
           preparation_time: 8,
@@ -855,6 +916,8 @@ const seedData = {
         {
           name: 'Café Tarrazú',
           description: 'Café premium de las montañas de Tarrazú',
+          image: 'https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=600&h=400&fit=crop',
+
           price: 1800,
           base_ingredients: ['Café Tarrazú molido', 'Agua filtrada'],
           preparation_time: 5,
@@ -865,6 +928,8 @@ const seedData = {
         {
           name: 'Capuchino Especial',
           description: 'Espresso con leche vaporizada y canela',
+          image: 'https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=600&h=400&fit=crop',
+
           price: 2200,
           base_ingredients: ['Café espresso', 'Leche', 'Canela', 'Azúcar'],
           preparation_time: 8,
@@ -874,6 +939,8 @@ const seedData = {
         {
           name: 'Latte Vainilla',
           description: 'Espresso con leche y jarabe de vainilla',
+          image: 'https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=600&h=400&fit=crop',
+
           price: 2500,
           base_ingredients: ['Café espresso', 'Leche', 'Jarabe de vainilla'],
           preparation_time: 8,
@@ -885,6 +952,8 @@ const seedData = {
         {
           name: 'Desayuno Típico',
           description: 'Gallo pinto, huevos, plátano maduro, queso y café',
+          image: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&h=400&fit=crop',
+
           price: 3500,
           base_ingredients: ['Gallo pinto', 'Huevos', 'Plátano maduro', 'Queso blanco', 'Café'],
           preparation_time: 15,
@@ -895,6 +964,7 @@ const seedData = {
         {
           name: 'Tostadas Francesas',
           description: 'Pan francés con miel, mantequilla y frutas',
+          image: 'https://images.unsplash.com/photo-1484723091739-30a097e8f929?w=600&h=400&fit=crop',
           price: 2800,
           base_ingredients: ['Pan francés', 'Huevos', 'Leche', 'Miel', 'Mantequilla', 'Frutas frescas'],
           preparation_time: 12,
@@ -910,6 +980,8 @@ const seedData = {
         {
           name: 'Taco de Carnitas',
           description: 'Taco con carnitas de cerdo, cebolla y cilantro',
+          image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=600&h=400&fit=crop',
+
           price: 1800,
           base_ingredients: ['Tortilla de maíz', 'Carnitas de cerdo', 'Cebolla', 'Cilantro', 'Salsa verde'],
           preparation_time: 8,
@@ -920,6 +992,8 @@ const seedData = {
         {
           name: 'Taco de Pollo',
           description: 'Taco con pollo marinado y guacamole',
+          image: 'https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?w=600&h=400&fit=crop',
+
           price: 1600,
           base_ingredients: ['Tortilla de maíz', 'Pollo marinado', 'Guacamole', 'Lechuga', 'Pico de gallo'],
           preparation_time: 8,
@@ -931,6 +1005,7 @@ const seedData = {
         {
           name: 'Quesadilla de Queso',
           description: 'Quesadilla clásica con queso Oaxaca derretido',
+          image: 'https://images.unsplash.com/photo-1618040996337-56904b7850b9?w=600&h=400&fit=crop',
           price: 2200,
           base_ingredients: ['Tortilla de harina', 'Queso Oaxaca', 'Crema', 'Guacamole'],
           preparation_time: 10,
@@ -945,6 +1020,8 @@ const seedData = {
         {
           name: 'Arroz Frito Especial',
           description: 'Arroz frito con pollo, camarones y vegetales',
+          image: 'https://images.unsplash.com/photo-1582878826629-29b7ad1cdc43?w=600&h=400&fit=crop',
+
           price: 4200,
           base_ingredients: ['Arroz', 'Pollo', 'Camarones', 'Huevo', 'Vegetales mixtos', 'Salsa de soya'],
           preparation_time: 15,
@@ -955,6 +1032,8 @@ const seedData = {
         {
           name: 'Arroz Frito Vegetariano',
           description: 'Arroz frito con tofu y vegetales frescos',
+          image: 'https://images.unsplash.com/photo-1596797038530-2c107229654b?w=600&h=400&fit=crop',
+
           price: 3500,
           base_ingredients: ['Arroz', 'Tofu', 'Brócoli', 'Zanahoria', 'Huevo', 'Salsa de soya'],
           preparation_time: 12,
@@ -966,6 +1045,7 @@ const seedData = {
         {
           name: 'Pollo Agridulce',
           description: 'Pollo empanizado con salsa agridulce y piña',
+          image: 'https://images.unsplash.com/photo-1606491956689-2ea866880c84?w=600&h=400&fit=crop',
           price: 4800,
           base_ingredients: ['Pollo empanizado', 'Salsa agridulce', 'Piña', 'Pimientos', 'Cebolla'],
           preparation_time: 18,
@@ -979,6 +1059,8 @@ const seedData = {
         {
           name: 'Butter Chicken',
           description: 'Pollo en salsa cremosa de tomate y especias',
+          image: 'https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=600&h=400&fit=crop',
+
           price: 5200,
           base_ingredients: ['Pollo', 'Salsa de tomate', 'Crema', 'Especias indias', 'Mantequilla'],
           preparation_time: 25,
@@ -989,6 +1071,8 @@ const seedData = {
         {
           name: 'Curry de Vegetales',
           description: 'Curry vegano con vegetales de temporada',
+          image: 'https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=600&h=400&fit=crop',
+
           price: 4200,
           base_ingredients: ['Vegetales mixtos', 'Leche de coco', 'Especias curry', 'Jengibre', 'Ajo'],
           preparation_time: 20,
@@ -1000,6 +1084,7 @@ const seedData = {
         {
           name: 'Naan con Ajo',
           description: 'Pan naan fresco con ajo y mantequilla',
+          image: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?w=600&h=400&fit=crop',
           price: 1800,
           base_ingredients: ['Harina', 'Yogur', 'Ajo', 'Mantequilla', 'Cilantro'],
           preparation_time: 12,
@@ -1013,6 +1098,8 @@ const seedData = {
         {
           name: 'Ensalada Arcoíris',
           description: 'Mix de vegetales frescos con aderezo de tahini',
+          image: 'https://placehold.co/600x400/32CD32/FFFFFF?text=Ensalada+Arcoiris',
+
           price: 3200,
           base_ingredients: ['Lechuga', 'Zanahoria', 'Remolacha', 'Pepino', 'Tomate cherry', 'Aderezo tahini'],
           preparation_time: 8,
@@ -1025,6 +1112,7 @@ const seedData = {
         {
           name: 'Buddha Bowl',
           description: 'Bowl completo con quinoa, vegetales y proteína vegetal',
+          image: 'https://placehold.co/600x400/228B22/FFFFFF?text=Buddha+Bowl',
           price: 4500,
           base_ingredients: ['Quinoa', 'Garbanzos', 'Aguacate', 'Brócoli', 'Zanahoria', 'Hummus'],
           preparation_time: 15,
@@ -1039,6 +1127,8 @@ const seedData = {
         {
           name: 'Alitas Buffalo',
           description: 'Alitas picantes con salsa buffalo clásica',
+          image: 'https://placehold.co/600x400/FF4500/FFFFFF?text=Alitas+Buffalo',
+
           price: 4200,
           base_ingredients: ['Alitas de pollo', 'Salsa buffalo', 'Apio', 'Aderezo ranch'],
           preparation_time: 18,
@@ -1049,6 +1139,8 @@ const seedData = {
         {
           name: 'Alitas BBQ',
           description: 'Alitas glaseadas con salsa barbacoa casera',
+          image: 'https://placehold.co/600x400/8B4513/FFFFFF?text=Alitas+BBQ',
+
           price: 4200,
           base_ingredients: ['Alitas de pollo', 'Salsa BBQ', 'Miel', 'Especias'],
           preparation_time: 18,
@@ -1060,6 +1152,7 @@ const seedData = {
         {
           name: 'Burger Americana',
           description: 'Hamburguesa clásica americana con papas',
+          image: 'https://placehold.co/600x400/FF6347/FFFFFF?text=Burger+Americana',
           price: 4800,
           base_ingredients: ['Pan brioche', 'Carne de res', 'Queso americano', 'Lechuga', 'Tomate', 'Papas fritas'],
           preparation_time: 15,
@@ -1073,6 +1166,8 @@ const seedData = {
         {
           name: 'Pastel de Chocolate',
           description: 'Pastel de chocolate húmedo con ganache',
+          image: 'https://placehold.co/600x400/8B4513/FFFFFF?text=Pastel+Chocolate',
+
           price: 2800,
           base_ingredients: ['Chocolate', 'Harina', 'Huevos', 'Mantequilla', 'Ganache'],
           preparation_time: 5,
@@ -1083,6 +1178,8 @@ const seedData = {
         {
           name: 'Tres Leches',
           description: 'Pastel tradicional bañado en tres leches',
+          image: 'https://placehold.co/600x400/F5DEB3/8B4513?text=Tres+Leches',
+
           price: 2500,
           base_ingredients: ['Bizcocho', 'Leche condensada', 'Leche evaporada', 'Crema', 'Canela'],
           preparation_time: 5,
@@ -1094,6 +1191,7 @@ const seedData = {
         {
           name: 'Cupcake Red Velvet',
           description: 'Cupcake de terciopelo rojo con frosting de queso crema',
+          image: 'https://placehold.co/600x400/DC143C/FFFFFF?text=Red+Velvet',
           price: 1800,
           base_ingredients: ['Harina', 'Cacao', 'Colorante rojo', 'Queso crema', 'Mantequilla'],
           preparation_time: 3,
@@ -1107,6 +1205,8 @@ const seedData = {
         {
           name: 'Ceviche de Corvina',
           description: 'Ceviche fresco de corvina con limón y cilantro',
+          image: 'https://placehold.co/600x400/20B2AA/FFFFFF?text=Ceviche+Corvina',
+
           price: 4200,
           base_ingredients: ['Corvina fresca', 'Limón', 'Cebolla morada', 'Cilantro', 'Ají dulce'],
           preparation_time: 15,
@@ -1117,6 +1217,7 @@ const seedData = {
         {
           name: 'Ceviche Mixto',
           description: 'Ceviche con corvina, camarones y pulpo',
+          image: 'https://placehold.co/600x400/4682B4/FFFFFF?text=Ceviche+Mixto',
           price: 5200,
           base_ingredients: ['Corvina', 'Camarones', 'Pulpo', 'Limón', 'Cebolla', 'Ají'],
           preparation_time: 18,
@@ -1128,6 +1229,7 @@ const seedData = {
         {
           name: 'Filete de Dorado a la Plancha',
           description: 'Filete de dorado fresco con vegetales salteados',
+          image: 'https://placehold.co/600x400/FFD700/000000?text=Dorado+Plancha',
           price: 6200,
           base_ingredients: ['Filete de dorado', 'Vegetales', 'Limón', 'Hierbas finas', 'Aceite de oliva'],
           preparation_time: 20,
@@ -1142,6 +1244,7 @@ const seedData = {
         {
           name: 'Escargots de Bourgogne',
           description: 'Caracoles en mantequilla de ajo y perejil',
+          image: 'https://placehold.co/600x400/800080/FFFFFF?text=Escargots',
           price: 3800,
           base_ingredients: ['Caracoles', 'Mantequilla', 'Ajo', 'Perejil', 'Vino blanco'],
           preparation_time: 15,
@@ -1152,6 +1255,8 @@ const seedData = {
         {
           name: 'Paté de Foie',
           description: 'Paté casero con tostadas francesas',
+          image: 'https://placehold.co/600x400/8B4513/FFFFFF?text=Pate+Foie',
+
           price: 4200,
           base_ingredients: ['Hígado de pato', 'Mantequilla', 'Coñac', 'Pan francés', 'Mermelada'],
           preparation_time: 8,
@@ -1163,6 +1268,7 @@ const seedData = {
         {
           name: 'Coq au Vin',
           description: 'Pollo guisado en vino tinto con verduras',
+          image: 'https://placehold.co/600x400/722F37/FFFFFF?text=Coq+au+Vin',
           price: 6800,
           base_ingredients: ['Pollo', 'Vino tinto', 'Champiñones', 'Cebollitas', 'Hierbas provenzales'],
           preparation_time: 35,
@@ -1177,6 +1283,7 @@ const seedData = {
         {
           name: 'Picanha Premium',
           description: 'Corte brasileño premium a la parrilla',
+          image: 'https://placehold.co/600x400/8B0000/FFFFFF?text=Picanha+Premium',
           price: 8500,
           base_ingredients: ['Picanha', 'Sal gruesa', 'Ajo', 'Chimichurri brasileño'],
           preparation_time: 25,
@@ -1187,6 +1294,7 @@ const seedData = {
         {
           name: 'Costilla de Res',
           description: 'Costilla jugosa con especias brasileñas',
+          image: 'https://placehold.co/600x400/A0522D/FFFFFF?text=Costilla+Res',
           price: 7200,
           base_ingredients: ['Costilla de res', 'Especias brasileñas', 'Sal marina'],
           preparation_time: 30,
@@ -1198,6 +1306,7 @@ const seedData = {
         {
           name: 'Farofa Tradicional',
           description: 'Harina de mandioca tostada con tocino',
+          image: 'https://placehold.co/600x400/DAA520/000000?text=Farofa',
           price: 1800,
           base_ingredients: ['Harina de mandioca', 'Tocino', 'Cebolla', 'Huevo'],
           preparation_time: 10,
@@ -1211,6 +1320,7 @@ const seedData = {
         {
           name: 'Ceviche Nikkei',
           description: 'Ceviche con leche de tigre y toque japonés',
+          image: 'https://placehold.co/600x400/FF69B4/FFFFFF?text=Ceviche+Nikkei',
           price: 5200,
           base_ingredients: ['Corvina', 'Leche de tigre', 'Ají amarillo', 'Jengibre', 'Soya'],
           preparation_time: 20,
@@ -1221,6 +1331,7 @@ const seedData = {
         {
           name: 'Tiradito de Atún',
           description: 'Atún fresco con ají amarillo y leche de tigre',
+          image: 'https://placehold.co/600x400/FF1493/FFFFFF?text=Tiradito+Atun',
           price: 6200,
           base_ingredients: ['Atún fresco', 'Ají amarillo', 'Leche de tigre', 'Microvegetales'],
           preparation_time: 15,
@@ -1232,6 +1343,7 @@ const seedData = {
         {
           name: 'Lomo Saltado Fusión',
           description: 'Lomo saltado con toque asiático y papas doradas',
+          image: 'https://placehold.co/600x400/CD853F/FFFFFF?text=Lomo+Saltado',
           price: 7800,
           base_ingredients: ['Lomo de res', 'Cebolla', 'Tomate', 'Papas', 'Soya', 'Cilantro'],
           preparation_time: 20,
@@ -1245,6 +1357,7 @@ const seedData = {
         {
           name: 'Plato Mezze Clásico',
           description: 'Selección de hummus, baba ganoush y aceitunas',
+          image: 'https://placehold.co/600x400/9ACD32/FFFFFF?text=Mezze+Clasico',
           price: 4200,
           base_ingredients: ['Hummus', 'Baba ganoush', 'Aceitunas kalamata', 'Pan pita', 'Aceite de oliva'],
           preparation_time: 12,
@@ -1257,6 +1370,7 @@ const seedData = {
         {
           name: 'Salmón a la Parrilla',
           description: 'Salmón con hierbas mediterráneas y aceite de oliva',
+          image: 'https://placehold.co/600x400/FA8072/FFFFFF?text=Salmon+Parrilla',
           price: 6800,
           base_ingredients: ['Salmón', 'Aceite de oliva extra', 'Orégano', 'Limón', 'Alcaparras'],
           preparation_time: 18,
@@ -1270,6 +1384,8 @@ const seedData = {
         {
           name: 'Mezze Árabe Completo',
           description: 'Variedad de entradas árabes tradicionales',
+          image: 'https://placehold.co/600x400/DAA520/000000?text=Mezze+Arabe',
+
           price: 4800,
           base_ingredients: ['Hummus', 'Tabbouleh', 'Kibbeh', 'Pan árabe', 'Yogur con pepino'],
           preparation_time: 15,
@@ -1282,6 +1398,7 @@ const seedData = {
         {
           name: 'Shish Kebab',
           description: 'Brochetas de cordero con especias árabes',
+          image: 'https://placehold.co/600x400/8B4513/FFFFFF?text=Shish+Kebab',
           price: 6500,
           base_ingredients: ['Cordero', 'Especias árabes', 'Cebolla', 'Pimientos', 'Arroz basmati'],
           preparation_time: 22,
@@ -1295,6 +1412,8 @@ const seedData = {
         {
           name: 'Bulgogi',
           description: 'Carne marinada a la parrilla coreana',
+          image: 'https://placehold.co/600x400/DC143C/FFFFFF?text=Bulgogi',
+
           price: 6200,
           base_ingredients: ['Carne de res', 'Marinada coreana', 'Cebollín', 'Sésamo', 'Arroz'],
           preparation_time: 20,
@@ -1305,6 +1424,7 @@ const seedData = {
         {
           name: 'Galbi',
           description: 'Costillas marinadas con salsa coreana',
+          image: 'https://placehold.co/600x400/8B0000/FFFFFF?text=Galbi',
           price: 7800,
           base_ingredients: ['Costillas de res', 'Salsa galbi', 'Ajo', 'Jengibre', 'Miel'],
           preparation_time: 25,
@@ -1316,6 +1436,7 @@ const seedData = {
         {
           name: 'Bibimbap Tradicional',
           description: 'Bowl de arroz con vegetales y carne',
+          image: 'https://placehold.co/600x400/FF6347/FFFFFF?text=Bibimbap',
           price: 5200,
           base_ingredients: ['Arroz', 'Vegetales variados', 'Carne marinada', 'Huevo', 'Gochujang'],
           preparation_time: 18,
@@ -1329,6 +1450,7 @@ const seedData = {
         {
           name: 'Tataki de Atún',
           description: 'Atún sellado con costra de sésamo y salsa ponzu',
+          image: 'https://placehold.co/600x400/2F4F4F/FFFFFF?text=Tataki+Atun',
           price: 4800,
           base_ingredients: ['Atún fresco', 'Sésamo negro', 'Ponzu', 'Microvegetales', 'Wasabi'],
           preparation_time: 12,
@@ -1341,6 +1463,7 @@ const seedData = {
         {
           name: 'Cordero con Costra de Hierbas',
           description: 'Rack de cordero con técnicas modernas',
+          image: 'https://placehold.co/600x400/556B2F/FFFFFF?text=Cordero+Hierbas',
           price: 9500,
           base_ingredients: ['Rack de cordero', 'Hierbas frescas', 'Ajo negro', 'Reducción de vino'],
           preparation_time: 30,
@@ -1354,6 +1477,7 @@ const seedData = {
         {
           name: 'Bao Buns Gourmet',
           description: 'Panecillos al vapor con cerdo confitado',
+          image: 'https://placehold.co/600x400/F5DEB3/8B4513?text=Bao+Buns',
           price: 3800,
           base_ingredients: ['Pan bao', 'Cerdo confitado', 'Pickles asiáticos', 'Salsa hoisin'],
           preparation_time: 10,
@@ -1366,6 +1490,7 @@ const seedData = {
         {
           name: 'Pad Thai Fusión',
           description: 'Pad Thai con ingredientes locales',
+          image: 'https://placehold.co/600x400/FF8C00/FFFFFF?text=Pad+Thai',
           price: 4200,
           base_ingredients: ['Fideos de arroz', 'Camarones', 'Vegetales tropicales', 'Tamarindo', 'Maní'],
           preparation_time: 15,
@@ -1379,6 +1504,7 @@ const seedData = {
         {
           name: 'Casado Típico',
           description: 'Gallo pinto, carne, plátano, ensalada y frijoles',
+          image: 'https://placehold.co/600x400/228B22/FFFFFF?text=Casado+Tipico',
           price: 3200,
           base_ingredients: ['Gallo pinto', 'Carne en salsa', 'Plátano maduro', 'Ensalada', 'Frijoles molidos'],
           preparation_time: 12,
@@ -1389,6 +1515,7 @@ const seedData = {
         {
           name: 'Casado de Pollo',
           description: 'Casado con pollo guisado tico',
+          image: 'https://placehold.co/600x400/32CD32/FFFFFF?text=Casado+Pollo',
           price: 3500,
           base_ingredients: ['Gallo pinto', 'Pollo guisado', 'Plátano', 'Ensalada', 'Frijoles'],
           preparation_time: 12,
@@ -1400,6 +1527,7 @@ const seedData = {
         {
           name: 'Desayuno Tico Completo',
           description: 'Gallo pinto, huevos, natilla, queso y café',
+          image: 'https://placehold.co/600x400/FFD700/000000?text=Desayuno+Tico',
           price: 2800,
           base_ingredients: ['Gallo pinto', 'Huevos', 'Natilla', 'Queso blanco', 'Café'],
           preparation_time: 10,
