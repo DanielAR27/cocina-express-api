@@ -23,8 +23,26 @@ const seedData = {
     { name: 'Saludable' },
     { name: 'Café' },
     { name: 'Desayunos' },
-    { name: 'Repostería' }
+    { name: 'Repostería' },
+    { name: 'Mexicana' },
+    { name: 'China' },
+    { name: 'India' },
+    { name: 'Vegetariana' },
+    { name: 'Comida Rápida' },
+    { name: 'Postres' },
+    { name: 'Mariscos' },
+    { name: 'Francesa' },
+    { name: 'Brasileña' },
+    { name: 'Peruana' },
+    { name: 'Mediterránea' },
+    { name: 'Árabe' },
+    { name: 'Coreana' },
+    { name: 'Fusión' },
+    { name: 'Gourmet' },
+    { name: 'Tradicional Costarricense' }
+
   ],
+  
 
   // Usuario admin para crear los datos
   adminUser: {
@@ -127,6 +145,374 @@ const seedData = {
         saturday: { open: '07:00', close: '21:00', closed: false },
         sunday: { open: '07:00', close: '19:00', closed: false }
       }
+    },
+    {
+      name: 'Tacos & Más',
+      description: 'Auténtica comida mexicana con salsas caseras',
+      contact: {
+        phone: '2267-8901',
+        email: 'pedidos@tacosymas.cr'
+      },
+      address: {
+        street: 'Heredia Centro, Calle Central',
+        city: 'Heredia',
+        province: 'Heredia'
+      },
+      restaurant_tags: ['Mexicana', 'Casual', 'Picante'],
+      business_hours: {
+        monday: { open: '11:00', close: '22:00', closed: false },
+        tuesday: { open: '11:00', close: '22:00', closed: false },
+        wednesday: { open: '11:00', close: '22:00', closed: false },
+        thursday: { open: '11:00', close: '22:00', closed: false },
+        friday: { open: '11:00', close: '23:00', closed: false },
+        saturday: { open: '11:00', close: '23:00', closed: false },
+        sunday: { open: '12:00', close: '21:00', closed: false }
+      }
+    },
+    {
+      name: 'Dragón Dorado',
+      description: 'Comida china tradicional y moderna',
+      contact: {
+        phone: '2278-9012',
+        email: 'info@dragondorado.cr'
+      },
+      address: {
+        street: 'Alajuela Centro, Avenida 1',
+        city: 'Alajuela',
+        province: 'Alajuela'
+      },
+      restaurant_tags: ['China', 'Familiar', 'Comida Rápida'],
+      business_hours: {
+        monday: { open: '11:30', close: '21:30', closed: false },
+        tuesday: { open: '11:30', close: '21:30', closed: false },
+        wednesday: { open: '11:30', close: '21:30', closed: false },
+        thursday: { open: '11:30', close: '21:30', closed: false },
+        friday: { open: '11:30', close: '22:30', closed: false },
+        saturday: { open: '11:30', close: '22:30', closed: false },
+        sunday: { open: '12:00', close: '21:00', closed: false }
+      }
+    },
+    {
+      name: 'Curry House',
+      description: 'Sabores auténticos de la India con especias importadas',
+      contact: {
+        phone: '2289-0123',
+        email: 'reservas@curryhouse.cr'
+      },
+      address: {
+        street: 'Rohrmoser, Plaza Mayor',
+        city: 'San José',
+        province: 'San José'
+      },
+      restaurant_tags: ['India', 'Saludable', 'Vegetariana'],
+      business_hours: {
+        monday: { open: '12:00', close: '22:00', closed: false },
+        tuesday: { open: '12:00', close: '22:00', closed: false },
+        wednesday: { open: '12:00', close: '22:00', closed: false },
+        thursday: { open: '12:00', close: '22:00', closed: false },
+        friday: { open: '12:00', close: '23:00', closed: false },
+        saturday: { open: '12:00', close: '23:00', closed: false },
+        sunday: { open: '13:00', close: '21:00', closed: false }
+      }
+    },
+    {
+      name: 'Green Garden',
+      description: 'Restaurante 100% vegetariano con opciones veganas',
+      contact: {
+        phone: '2290-1234',
+        email: 'hola@greengarden.cr'
+      },
+      address: {
+        street: 'Montes de Oca, San Pedro',
+        city: 'San José',
+        province: 'San José'
+      },
+      restaurant_tags: ['Vegetariana', 'Saludable', 'Orgánico'],
+      business_hours: {
+        monday: { open: '08:00', close: '20:00', closed: false },
+        tuesday: { open: '08:00', close: '20:00', closed: false },
+        wednesday: { open: '08:00', close: '20:00', closed: false },
+        thursday: { open: '08:00', close: '20:00', closed: false },
+        friday: { open: '08:00', close: '21:00', closed: false },
+        saturday: { open: '09:00', close: '21:00', closed: false },
+        sunday: { open: '09:00', close: '19:00', closed: false }
+      }
+    },
+    {
+      name: 'Wings Express',
+      description: 'Alitas picantes y comida rápida americana',
+      contact: {
+        phone: '2201-2345',
+        email: 'pedidos@wingsexpress.cr'
+      },
+      address: {
+        street: 'Curridabat Centro, Calle 5',
+        city: 'Curridabat',
+        province: 'San José'
+      },
+      restaurant_tags: ['Comida Rápida', 'Picante', 'Casual'],
+      business_hours: {
+        monday: { open: '15:00', close: '23:00', closed: false },
+        tuesday: { open: '15:00', close: '23:00', closed: false },
+        wednesday: { open: '15:00', close: '23:00', closed: false },
+        thursday: { open: '15:00', close: '24:00', closed: false },
+        friday: { open: '15:00', close: '01:00', closed: false },
+        saturday: { open: '12:00', close: '01:00', closed: false },
+        sunday: { open: '12:00', close: '23:00', closed: false }
+      }
+    },
+    {
+      name: 'Dulce Tentación',
+      description: 'Repostería artesanal y postres gourmet',
+      contact: {
+        phone: '2212-3456',
+        email: 'info@dulcetentacion.cr'
+      },
+      address: {
+        street: 'Tres Ríos Centro, Avenida Central',
+        city: 'Tres Ríos',
+        province: 'Cartago'
+      },
+      restaurant_tags: ['Postres', 'Repostería', 'Café'],
+      business_hours: {
+        monday: { open: '09:00', close: '20:00', closed: false },
+        tuesday: { open: '09:00', close: '20:00', closed: false },
+        wednesday: { open: '09:00', close: '20:00', closed: false },
+        thursday: { open: '09:00', close: '20:00', closed: false },
+        friday: { open: '09:00', close: '21:00', closed: false },
+        saturday: { open: '08:00', close: '21:00', closed: false },
+        sunday: { open: '10:00', close: '19:00', closed: false }
+      }
+    },
+    {
+      name: 'Mariscos del Pacífico',
+      description: 'Pescados y mariscos frescos del Pacífico costarricense',
+      contact: {
+        phone: '2223-4567',
+        email: 'ventas@mariscospacifico.cr'
+      },
+      address: {
+        street: 'Puntarenas Centro, Paseo de los Turistas',
+        city: 'Puntarenas',
+        province: 'Puntarenas'
+      },
+      restaurant_tags: ['Mariscos', 'Saludable', 'Familiar'],
+      business_hours: {
+        monday: { open: '11:00', close: '21:00', closed: false },
+        tuesday: { open: '11:00', close: '21:00', closed: false },
+        wednesday: { open: '11:00', close: '21:00', closed: false },
+        thursday: { open: '11:00', close: '21:00', closed: false },
+        friday: { open: '11:00', close: '22:00', closed: false },
+        saturday: { open: '10:00', close: '22:00', closed: false },
+        sunday: { open: '10:00', close: '21:00', closed: false }
+      }
+    },
+    {
+      name: 'Bistro La Parisienne',
+      description: 'Cocina francesa auténtica en el corazón de San José',
+      contact: {
+        phone: '2234-5678',
+        email: 'reservas@laparisienne.cr'
+      },
+      address: {
+        street: 'Paseo Colón, Edificio Centro Colón',
+        city: 'San José',
+        province: 'San José'
+      },
+      restaurant_tags: ['Francesa', 'Gourmet', 'Casual'],
+      business_hours: {
+        monday: { open: '18:00', close: '23:00', closed: false },
+        tuesday: { open: '18:00', close: '23:00', closed: false },
+        wednesday: { open: '18:00', close: '23:00', closed: false },
+        thursday: { open: '18:00', close: '23:00', closed: false },
+        friday: { open: '18:00', close: '24:00', closed: false },
+        saturday: { open: '18:00', close: '24:00', closed: false },
+        sunday: { closed: true }
+      }
+    },
+    {
+      name: 'Churrascaria Ipanema',
+      description: 'Carnes brasileñas a la parrilla con buffet de ensaladas',
+      contact: {
+        phone: '2245-6789',
+        email: 'info@ipanema.cr'
+      },
+      address: {
+        street: 'Santa Ana Centro, Plaza Real',
+        city: 'Santa Ana',
+        province: 'San José'
+      },
+      restaurant_tags: ['Brasileña', 'Parrilla', 'Familiar'],
+      business_hours: {
+        monday: { open: '12:00', close: '22:00', closed: false },
+        tuesday: { open: '12:00', close: '22:00', closed: false },
+        wednesday: { open: '12:00', close: '22:00', closed: false },
+        thursday: { open: '12:00', close: '22:00', closed: false },
+        friday: { open: '12:00', close: '23:00', closed: false },
+        saturday: { open: '12:00', close: '23:00', closed: false },
+        sunday: { open: '12:00', close: '21:00', closed: false }
+      }
+    },
+    {
+      name: 'Lima Fusión',
+      description: 'Cocina peruana moderna con toques contemporáneos',
+      contact: {
+        phone: '2256-7890',
+        email: 'pedidos@limafusion.cr'
+      },
+      address: {
+        street: 'Lindora, Forum Santa Ana',
+        city: 'Santa Ana',
+        province: 'San José'
+      },
+      restaurant_tags: ['Peruana', 'Fusión', 'Gourmet'],
+      business_hours: {
+        monday: { open: '12:00', close: '22:00', closed: false },
+        tuesday: { open: '12:00', close: '22:00', closed: false },
+        wednesday: { open: '12:00', close: '22:00', closed: false },
+        thursday: { open: '12:00', close: '22:00', closed: false },
+        friday: { open: '12:00', close: '23:00', closed: false },
+        saturday: { open: '12:00', close: '23:00', closed: false },
+        sunday: { open: '17:00', close: '21:00', closed: false }
+      }
+    },
+    {
+      name: 'Oliva Mediterránea',
+      description: 'Sabores del Mediterráneo con aceite de oliva premium',
+      contact: {
+        phone: '2267-8901',
+        email: 'hola@olivamed.cr'
+      },
+      address: {
+        street: 'Moravia Centro, Avenida Central',
+        city: 'Moravia',
+        province: 'San José'
+      },
+      restaurant_tags: ['Mediterránea', 'Saludable', 'Casual'],
+      business_hours: {
+        monday: { open: '11:00', close: '21:00', closed: false },
+        tuesday: { open: '11:00', close: '21:00', closed: false },
+        wednesday: { open: '11:00', close: '21:00', closed: false },
+        thursday: { open: '11:00', close: '21:00', closed: false },
+        friday: { open: '11:00', close: '22:00', closed: false },
+        saturday: { open: '11:00', close: '22:00', closed: false },
+        sunday: { open: '12:00', close: '20:00', closed: false }
+      }
+    },
+    {
+      name: 'Al-Habibi',
+      description: 'Cocina árabe tradicional con especias importadas',
+      contact: {
+        phone: '2278-9012',
+        email: 'reservas@alhabibi.cr'
+      },
+      address: {
+        street: 'Guadalupe Centro, Plaza González Víquez',
+        city: 'Guadalupe',
+        province: 'San José'
+      },
+      restaurant_tags: ['Árabe', 'Tradicional Costarricense', 'Familiar'],
+      business_hours: {
+        monday: { open: '11:30', close: '21:30', closed: false },
+        tuesday: { open: '11:30', close: '21:30', closed: false },
+        wednesday: { open: '11:30', close: '21:30', closed: false },
+        thursday: { open: '11:30', close: '21:30', closed: false },
+        friday: { open: '11:30', close: '22:30', closed: false },
+        saturday: { open: '11:30', close: '22:30', closed: false },
+        sunday: { open: '12:00', close: '21:00', closed: false }
+      }
+    },
+    {
+      name: 'Seoul Kitchen',
+      description: 'Auténtica comida coreana con BBQ y kimchi casero',
+      contact: {
+        phone: '2289-0123',
+        email: 'info@seoulkitchen.cr'
+      },
+      address: {
+        street: 'Tibás Centro, Mall San Pedro',
+        city: 'Tibás',
+        province: 'San José'
+      },
+      restaurant_tags: ['Coreana', 'Fusión', 'Casual'],
+      business_hours: {
+        monday: { open: '12:00', close: '22:00', closed: false },
+        tuesday: { open: '12:00', close: '22:00', closed: false },
+        wednesday: { open: '12:00', close: '22:00', closed: false },
+        thursday: { open: '12:00', close: '22:00', closed: false },
+        friday: { open: '12:00', close: '23:00', closed: false },
+        saturday: { open: '12:00', close: '23:00', closed: false },
+        sunday: { open: '13:00', close: '21:00', closed: false }
+      }
+    },
+    {
+      name: 'Fusion 360',
+      description: 'Cocina de fusión internacional con técnicas modernas',
+      contact: {
+        phone: '2290-1234',
+        email: 'chef@fusion360.cr'
+      },
+      address: {
+        street: 'Belén Centro, Ciudad Cariari',
+        city: 'Belén',
+        province: 'Heredia'
+      },
+      restaurant_tags: ['Fusión', 'Gourmet', 'Saludable'],
+      business_hours: {
+        monday: { open: '18:30', close: '23:00', closed: false },
+        tuesday: { open: '18:30', close: '23:00', closed: false },
+        wednesday: { open: '18:30', close: '23:00', closed: false },
+        thursday: { open: '18:30', close: '23:00', closed: false },
+        friday: { open: '18:30', close: '24:00', closed: false },
+        saturday: { open: '18:30', close: '24:00', closed: false },
+        sunday: { closed: true }
+      }
+    },
+    {
+      name: 'Mercado Gastronómico',
+      description: 'Food hall con múltiples opciones gourmet bajo un techo',
+      contact: {
+        phone: '2201-2345',
+        email: 'contacto@mercadogastro.cr'
+      },
+      address: {
+        street: 'San Rafael de Heredia, Centro Comercial Paseo de las Flores',
+        city: 'San Rafael',
+        province: 'Heredia'
+      },
+      restaurant_tags: ['Gourmet', 'Fusión', 'Familiar'],
+      business_hours: {
+        monday: { open: '10:00', close: '22:00', closed: false },
+        tuesday: { open: '10:00', close: '22:00', closed: false },
+        wednesday: { open: '10:00', close: '22:00', closed: false },
+        thursday: { open: '10:00', close: '22:00', closed: false },
+        friday: { open: '10:00', close: '23:00', closed: false },
+        saturday: { open: '09:00', close: '23:00', closed: false },
+        sunday: { open: '10:00', close: '21:00', closed: false }
+      }
+    },
+    {
+      name: 'Soda La Típica',
+      description: 'Comida tradicional costarricense casera y auténtica',
+      contact: {
+        phone: '2212-3456',
+        email: 'info@sodatipica.cr'
+      },
+      address: {
+        street: 'Desamparados Centro, Mercado Central',
+        city: 'Desamparados',
+        province: 'San José'
+      },
+      restaurant_tags: ['Tradicional Costarricense', 'Familiar', 'Casual'],
+      business_hours: {
+        monday: { open: '06:00', close: '18:00', closed: false },
+        tuesday: { open: '06:00', close: '18:00', closed: false },
+        wednesday: { open: '06:00', close: '18:00', closed: false },
+        thursday: { open: '06:00', close: '18:00', closed: false },
+        friday: { open: '06:00', close: '19:00', closed: false },
+        saturday: { open: '06:00', close: '19:00', closed: false },
+        sunday: { open: '07:00', close: '15:00', closed: false }
+      }
     }
   ],
 
@@ -159,7 +545,124 @@ const seedData = {
       { name: 'Repostería', description: 'Dulces hechos en casa' },
       { name: 'Bebidas Frías', description: 'Frappés y smoothies' },
       { name: 'Almuerzos Ligeros', description: 'Opciones saludables' }
+    ],
+
+    'Tacos & Más': [
+      { name: 'Tacos', description: 'Tacos tradicionales mexicanos' },
+      { name: 'Quesadillas', description: 'Quesadillas con queso derretido' },
+      { name: 'Burritos', description: 'Burritos rellenos de sabor' },
+      { name: 'Nachos', description: 'Nachos con guacamole y salsas' },
+      { name: 'Bebidas', description: 'Aguas frescas y sodas mexicanas' }
+    ],
+    'Dragón Dorado': [
+      { name: 'Arroz Frito', description: 'Arroces salteados al wok' },
+      { name: 'Chop Suey', description: 'Vegetales salteados' },
+      { name: 'Pollo', description: 'Especialidades de pollo' },
+      { name: 'Cerdo', description: 'Platos tradicionales de cerdo' },
+      { name: 'Sopas', description: 'Sopas chinas calientes' }
+    ],
+    'Curry House': [
+      { name: 'Curries', description: 'Curries tradicionales indios' },
+      { name: 'Tandoor', description: 'Especialidades del horno tandoor' },
+      { name: 'Biryani', description: 'Arroces aromáticos' },
+      { name: 'Naan & Breads', description: 'Panes indios frescos' },
+      { name: 'Lassi & Bebidas', description: 'Bebidas tradicionales' }
+    ],
+    'Green Garden': [
+      { name: 'Ensaladas', description: 'Ensaladas frescas y nutritivas' },
+      { name: 'Bowls', description: 'Bowls saludables balanceados' },
+      { name: 'Wraps', description: 'Wraps vegetarianos' },
+      { name: 'Smoothies', description: 'Batidos naturales' },
+      { name: 'Postres Veganos', description: 'Dulces sin productos animales' }
+    ],
+    'Wings Express': [
+      { name: 'Alitas', description: 'Alitas con diferentes salsas' },
+      { name: 'Hamburguesas', description: 'Burgers americanas' },
+      { name: 'Papas', description: 'Papas fritas y especialidades' },
+      { name: 'Nuggets', description: 'Nuggets de pollo crujientes' },
+      { name: 'Bebidas', description: 'Sodas y bebidas frías' }
+    ],
+    'Dulce Tentación': [
+      { name: 'Pasteles', description: 'Pasteles para toda ocasión' },
+      { name: 'Cupcakes', description: 'Cupcakes decorados' },
+      { name: 'Galletas', description: 'Galletas artesanales' },
+      { name: 'Helados', description: 'Helados cremosos caseros' },
+      { name: 'Café & Té', description: 'Bebidas calientes' }
+    ],
+    'Mariscos del Pacífico': [
+      { name: 'Ceviches', description: 'Ceviches frescos del día' },
+      { name: 'Pescados', description: 'Pescados a la plancha y fritos' },
+      { name: 'Mariscos', description: 'Camarones, pulpo y langostinos' },
+      { name: 'Arroces', description: 'Arroces con mariscos' },
+      { name: 'Sopas', description: 'Sopas de mariscos calientes' }
+    ],
+    
+    
+    'Bistro La Parisienne': [
+      { name: 'Entrées', description: 'Entradas francesas tradicionales' },
+      { name: 'Plats Principaux', description: 'Platos principales franceses' },
+      { name: 'Fromages', description: 'Selección de quesos franceses' },
+      { name: 'Desserts', description: 'Postres franceses clásicos' },
+      { name: 'Vins & Boissons', description: 'Vinos y bebidas francesas' }
+    ],
+    'Churrascaria Ipanema': [
+      { name: 'Carnes Premium', description: 'Cortes brasileños de primera' },
+      { name: 'Rodizio', description: 'Servicio continuo de carnes' },
+      { name: 'Buffet de Ensaladas', description: 'Variedad de ensaladas frescas' },
+      { name: 'Acompañamientos', description: 'Guarniciones brasileñas' },
+      { name: 'Caipirinhas', description: 'Bebidas tradicionales brasileñas' }
+    ],
+    'Lima Fusión': [
+      { name: 'Ceviches Nikkei', description: 'Ceviches con influencia japonesa' },
+      { name: 'Tiraditos', description: 'Pescado crudo al estilo peruano' },
+      { name: 'Anticuchos', description: 'Brochetas peruanas marinadas' },
+      { name: 'Platos de Fondo', description: 'Platos principales peruanos' },
+      { name: 'Pisco Bar', description: 'Cócteles con pisco peruano' }
+    ],
+    'Oliva Mediterránea': [
+      { name: 'Mezze', description: 'Pequeños platos mediterráneos' },
+      { name: 'Ensaladas Griegas', description: 'Ensaladas con aceitunas y feta' },
+      { name: 'Pescados del Mar', description: 'Pescados frescos mediterráneos' },
+      { name: 'Carnes a la Parrilla', description: 'Carnes con hierbas mediterráneas' },
+      { name: 'Postres Helénicos', description: 'Dulces griegos tradicionales' }
+    ],
+    'Al-Habibi': [
+      { name: 'Mezze Árabes', description: 'Variedad de entradas árabes' },
+      { name: 'Kebabs', description: 'Carnes asadas en pincho' },
+      { name: 'Platos con Arroz', description: 'Arroces aromáticos árabes' },
+      { name: 'Dulces Árabes', description: 'Repostería árabe tradicional' },
+      { name: 'Té y Café Árabe', description: 'Bebidas árabes tradicionales' }
+    ],
+    'Seoul Kitchen': [
+      { name: 'BBQ Coreano', description: 'Carnes a la parrilla coreanas' },
+      { name: 'Bibimbap', description: 'Bowls de arroz coreanos' },
+      { name: 'Sopas Calientes', description: 'Sopas coreanas tradicionales' },
+      { name: 'Banchan', description: 'Acompañamientos coreanos' },
+      { name: 'Bebidas Coreanas', description: 'Tés y bebidas de Corea' }
+    ],
+    'Fusion 360': [
+      { name: 'Tapas Fusión', description: 'Pequeños platos de fusión' },
+      { name: 'Pescados Asiáticos', description: 'Pescados con técnicas asiáticas' },
+      { name: 'Carnes de Autor', description: 'Carnes con preparaciones únicas' },
+      { name: 'Postres Modernos', description: 'Postres con técnicas modernas' },
+      { name: 'Cócteles de Autor', description: 'Mixología internacional' }
+    ],
+    'Mercado Gastronómico': [
+      { name: 'Street Food', description: 'Comida callejera gourmet' },
+      { name: 'Internacional', description: 'Platos de diferentes países' },
+      { name: 'Healthy Corner', description: 'Opciones saludables variadas' },
+      { name: 'Sweet Station', description: 'Estación de dulces y postres' },
+      { name: 'Bebidas Artesanales', description: 'Bebidas especiales del mercado' }
+    ],
+    'Soda La Típica': [
+      { name: 'Casados', description: 'Comidas completas costarricenses' },
+      { name: 'Desayunos Típicos', description: 'Desayunos tradicionales ticos' },
+      { name: 'Sopas Criollas', description: 'Sopas tradicionales de Costa Rica' },
+      { name: 'Bebidas Naturales', description: 'Refrescos naturales ticos' },
+      { name: 'Postres Caseros', description: 'Dulces tradicionales caseros' }
     ]
+  
+  
   },
 
   // Tags específicos por restaurante
@@ -167,7 +670,23 @@ const seedData = {
     'Pizzería Nonna Rosa': ['Vegetariano', 'Picante', 'Familiar', 'Clásico', 'Gourmet'],
     'El Parrillero': ['Picante', 'XXL', 'Clásico', 'Premium', 'Sin gluten'],
     'Sushi Bar Sakura': ['Pescado crudo', 'Vegetariano', 'Picante', 'Tradicional', 'Especial'],
-    'Café del Volcán': ['Orgánico', 'Descafeinado', 'Dulce', 'Vegano', 'Sin azúcar']
+    'Café del Volcán': ['Orgánico', 'Descafeinado', 'Dulce', 'Vegano', 'Sin azúcar'],
+    'Tacos & Más': ['Picante', 'Suave', 'Extra queso', 'Vegetariano', 'Tradicional'],
+    'Dragón Dorado': ['Picante', 'Agridulce', 'Vegetariano', 'Sin gluten', 'Familiar'],
+    'Curry House': ['Muy picante', 'Medio picante', 'Suave', 'Vegano', 'Sin gluten'],
+    'Green Garden': ['Vegano', 'Crudo', 'Sin gluten', 'Proteína vegetal', 'Orgánico'],
+    'Wings Express': ['Extra picante', 'BBQ', 'Mild', 'Crujiente', 'Familiar'],
+    'Dulce Tentación': ['Sin azúcar', 'Vegano', 'Sin gluten', 'Chocolate', 'Frutal'],
+    'Mariscos del Pacífico': ['Fresco del día', 'Picante', 'A la plancha', 'Frito', 'Especial'],
+    'Bistro La Parisienne': ['Clásico francés', 'Gourmet', 'Temporada', 'Tradicional', 'Premium'],
+    'Churrascaria Ipanema': ['Rodizio completo', 'Corte premium', 'Parrilla brasileña', 'Familiar', 'All you can eat'],
+    'Lima Fusión': ['Nikkei', 'Picante ají', 'Fresco', 'Peruano auténtico', 'Fusión moderna'],
+    'Oliva Mediterránea': ['Aceite oliva extra', 'Mediterráneo', 'Saludable', 'Griego', 'Vegetariano'],
+    'Al-Habibi': ['Halal', 'Especias árabes', 'Tradicional', 'Vegetariano', 'Casero'],
+    'Seoul Kitchen': ['Kimchi casero', 'BBQ coreano', 'Picante gochujang', 'Fermentado', 'K-Food'],
+    'Fusion 360': ['Técnica molecular', 'De autor', 'Internacional', 'Innovador', 'Gourmet'],
+    'Mercado Gastronómico': ['Street food', 'Artesanal', 'Internacional', 'Gourmet', 'Variado'],
+    'Soda La Típica': ['100% tico', 'Casero', 'Tradicional', 'Familiar', 'Económico']
   },
 
   // Productos detallados
@@ -382,9 +901,516 @@ const seedData = {
           nutritional_info: { calories: 380, protein: 12, carbs: 45, fat: 18, fiber: 4 },
           tags: ['Dulce']
         }
+    ]
+    }
+    // ← INSERTAR AQUÍ LOS NUEVOS PRODUCTOS:
+    ,
+    'Tacos & Más': {
+      'Tacos': [
+        {
+          name: 'Taco de Carnitas',
+          description: 'Taco con carnitas de cerdo, cebolla y cilantro',
+          price: 1800,
+          base_ingredients: ['Tortilla de maíz', 'Carnitas de cerdo', 'Cebolla', 'Cilantro', 'Salsa verde'],
+          preparation_time: 8,
+          nutritional_info: { calories: 250, protein: 15, carbs: 20, fat: 12, fiber: 3 },
+          tags: ['Tradicional', 'Picante'],
+          is_featured: true
+        },
+        {
+          name: 'Taco de Pollo',
+          description: 'Taco con pollo marinado y guacamole',
+          price: 1600,
+          base_ingredients: ['Tortilla de maíz', 'Pollo marinado', 'Guacamole', 'Lechuga', 'Pico de gallo'],
+          preparation_time: 8,
+          nutritional_info: { calories: 220, protein: 18, carbs: 18, fat: 10, fiber: 4 },
+          tags: ['Suave']
+        }
+      ],
+      'Quesadillas': [
+        {
+          name: 'Quesadilla de Queso',
+          description: 'Quesadilla clásica con queso Oaxaca derretido',
+          price: 2200,
+          base_ingredients: ['Tortilla de harina', 'Queso Oaxaca', 'Crema', 'Guacamole'],
+          preparation_time: 10,
+          nutritional_info: { calories: 380, protein: 20, carbs: 30, fat: 22, fiber: 2 },
+          tags: ['Extra queso', 'Vegetariano'],
+          is_featured: true
+        }
+      ]
+    },
+    'Dragón Dorado': {
+      'Arroz Frito': [
+        {
+          name: 'Arroz Frito Especial',
+          description: 'Arroz frito con pollo, camarones y vegetales',
+          price: 4200,
+          base_ingredients: ['Arroz', 'Pollo', 'Camarones', 'Huevo', 'Vegetales mixtos', 'Salsa de soya'],
+          preparation_time: 15,
+          nutritional_info: { calories: 420, protein: 25, carbs: 45, fat: 15, fiber: 3 },
+          tags: ['Familiar'],
+          is_featured: true
+        },
+        {
+          name: 'Arroz Frito Vegetariano',
+          description: 'Arroz frito con tofu y vegetales frescos',
+          price: 3500,
+          base_ingredients: ['Arroz', 'Tofu', 'Brócoli', 'Zanahoria', 'Huevo', 'Salsa de soya'],
+          preparation_time: 12,
+          nutritional_info: { calories: 350, protein: 15, carbs: 48, fat: 12, fiber: 5 },
+          tags: ['Vegetariano']
+        }
+      ],
+      'Pollo': [
+        {
+          name: 'Pollo Agridulce',
+          description: 'Pollo empanizado con salsa agridulce y piña',
+          price: 4800,
+          base_ingredients: ['Pollo empanizado', 'Salsa agridulce', 'Piña', 'Pimientos', 'Cebolla'],
+          preparation_time: 18,
+          nutritional_info: { calories: 480, protein: 28, carbs: 42, fat: 22, fiber: 3 },
+          tags: ['Agridulce', 'Familiar']
+        }
+      ]
+    },
+    'Curry House': {
+      'Curries': [
+        {
+          name: 'Butter Chicken',
+          description: 'Pollo en salsa cremosa de tomate y especias',
+          price: 5200,
+          base_ingredients: ['Pollo', 'Salsa de tomate', 'Crema', 'Especias indias', 'Mantequilla'],
+          preparation_time: 25,
+          nutritional_info: { calories: 450, protein: 30, carbs: 15, fat: 28, fiber: 2 },
+          tags: ['Suave'],
+          is_featured: true
+        },
+        {
+          name: 'Curry de Vegetales',
+          description: 'Curry vegano con vegetales de temporada',
+          price: 4200,
+          base_ingredients: ['Vegetales mixtos', 'Leche de coco', 'Especias curry', 'Jengibre', 'Ajo'],
+          preparation_time: 20,
+          nutritional_info: { calories: 320, protein: 8, carbs: 25, fat: 18, fiber: 8 },
+          tags: ['Vegano', 'Medio picante']
+        }
+      ],
+      'Naan & Breads': [
+        {
+          name: 'Naan con Ajo',
+          description: 'Pan naan fresco con ajo y mantequilla',
+          price: 1800,
+          base_ingredients: ['Harina', 'Yogur', 'Ajo', 'Mantequilla', 'Cilantro'],
+          preparation_time: 12,
+          nutritional_info: { calories: 280, protein: 8, carbs: 45, fat: 8, fiber: 2 },
+          tags: ['Vegetariano']
+        }
+      ]
+    },
+    'Green Garden': {
+      'Ensaladas': [
+        {
+          name: 'Ensalada Arcoíris',
+          description: 'Mix de vegetales frescos con aderezo de tahini',
+          price: 3200,
+          base_ingredients: ['Lechuga', 'Zanahoria', 'Remolacha', 'Pepino', 'Tomate cherry', 'Aderezo tahini'],
+          preparation_time: 8,
+          nutritional_info: { calories: 180, protein: 6, carbs: 15, fat: 12, fiber: 8 },
+          tags: ['Vegano', 'Crudo'],
+          is_featured: true
+        }
+      ],
+      'Bowls': [
+        {
+          name: 'Buddha Bowl',
+          description: 'Bowl completo con quinoa, vegetales y proteína vegetal',
+          price: 4500,
+          base_ingredients: ['Quinoa', 'Garbanzos', 'Aguacate', 'Brócoli', 'Zanahoria', 'Hummus'],
+          preparation_time: 15,
+          nutritional_info: { calories: 420, protein: 18, carbs: 45, fat: 20, fiber: 12 },
+          tags: ['Vegano', 'Proteína vegetal'],
+          is_featured: true
+        }
+      ]
+    },
+    'Wings Express': {
+      'Alitas': [
+        {
+          name: 'Alitas Buffalo',
+          description: 'Alitas picantes con salsa buffalo clásica',
+          price: 4200,
+          base_ingredients: ['Alitas de pollo', 'Salsa buffalo', 'Apio', 'Aderezo ranch'],
+          preparation_time: 18,
+          nutritional_info: { calories: 380, protein: 28, carbs: 5, fat: 28, fiber: 1 },
+          tags: ['Extra picante'],
+          is_featured: true
+        },
+        {
+          name: 'Alitas BBQ',
+          description: 'Alitas glaseadas con salsa barbacoa casera',
+          price: 4200,
+          base_ingredients: ['Alitas de pollo', 'Salsa BBQ', 'Miel', 'Especias'],
+          preparation_time: 18,
+          nutritional_info: { calories: 350, protein: 26, carbs: 12, fat: 22, fiber: 0 },
+          tags: ['BBQ', 'Familiar']
+        }
+      ],
+      'Hamburguesas': [
+        {
+          name: 'Burger Americana',
+          description: 'Hamburguesa clásica americana con papas',
+          price: 4800,
+          base_ingredients: ['Pan brioche', 'Carne de res', 'Queso americano', 'Lechuga', 'Tomate', 'Papas fritas'],
+          preparation_time: 15,
+          nutritional_info: { calories: 650, protein: 32, carbs: 45, fat: 38, fiber: 4 },
+          tags: ['Familiar', 'Crujiente']
+        }
+      ]
+    },
+    'Dulce Tentación': {
+      'Pasteles': [
+        {
+          name: 'Pastel de Chocolate',
+          description: 'Pastel de chocolate húmedo con ganache',
+          price: 2800,
+          base_ingredients: ['Chocolate', 'Harina', 'Huevos', 'Mantequilla', 'Ganache'],
+          preparation_time: 5,
+          nutritional_info: { calories: 420, protein: 6, carbs: 45, fat: 24, fiber: 3 },
+          tags: ['Chocolate'],
+          is_featured: true
+        },
+        {
+          name: 'Tres Leches',
+          description: 'Pastel tradicional bañado en tres leches',
+          price: 2500,
+          base_ingredients: ['Bizcocho', 'Leche condensada', 'Leche evaporada', 'Crema', 'Canela'],
+          preparation_time: 5,
+          nutritional_info: { calories: 380, protein: 8, carbs: 42, fat: 20, fiber: 1 },
+          tags: ['Tradicional']
+        }
+      ],
+      'Cupcakes': [
+        {
+          name: 'Cupcake Red Velvet',
+          description: 'Cupcake de terciopelo rojo con frosting de queso crema',
+          price: 1800,
+          base_ingredients: ['Harina', 'Cacao', 'Colorante rojo', 'Queso crema', 'Mantequilla'],
+          preparation_time: 3,
+          nutritional_info: { calories: 320, protein: 4, carbs: 38, fat: 18, fiber: 2 },
+          tags: ['Chocolate']
+        }
+      ]
+    },
+    'Mariscos del Pacífico': {
+      'Ceviches': [
+        {
+          name: 'Ceviche de Corvina',
+          description: 'Ceviche fresco de corvina con limón y cilantro',
+          price: 4200,
+          base_ingredients: ['Corvina fresca', 'Limón', 'Cebolla morada', 'Cilantro', 'Ají dulce'],
+          preparation_time: 15,
+          nutritional_info: { calories: 180, protein: 25, carbs: 8, fat: 5, fiber: 2 },
+          tags: ['Fresco del día'],
+          is_featured: true
+        },
+        {
+          name: 'Ceviche Mixto',
+          description: 'Ceviche con corvina, camarones y pulpo',
+          price: 5200,
+          base_ingredients: ['Corvina', 'Camarones', 'Pulpo', 'Limón', 'Cebolla', 'Ají'],
+          preparation_time: 18,
+          nutritional_info: { calories: 220, protein: 32, carbs: 10, fat: 6, fiber: 2 },
+          tags: ['Especial', 'Fresco del día']
+        }
+      ],
+      'Pescados': [
+        {
+          name: 'Filete de Dorado a la Plancha',
+          description: 'Filete de dorado fresco con vegetales salteados',
+          price: 6200,
+          base_ingredients: ['Filete de dorado', 'Vegetales', 'Limón', 'Hierbas finas', 'Aceite de oliva'],
+          preparation_time: 20,
+          nutritional_info: { calories: 350, protein: 40, carbs: 12, fat: 15, fiber: 4 },
+          tags: ['A la plancha', 'Fresco del día'],
+          is_featured: true
+        }
+      ]
+    },
+    'Bistro La Parisienne': {
+      'Entrées': [
+        {
+          name: 'Escargots de Bourgogne',
+          description: 'Caracoles en mantequilla de ajo y perejil',
+          price: 3800,
+          base_ingredients: ['Caracoles', 'Mantequilla', 'Ajo', 'Perejil', 'Vino blanco'],
+          preparation_time: 15,
+          nutritional_info: { calories: 220, protein: 12, carbs: 5, fat: 16, fiber: 1 },
+          tags: ['Clásico francés', 'Tradicional'],
+          is_featured: true
+        },
+        {
+          name: 'Paté de Foie',
+          description: 'Paté casero con tostadas francesas',
+          price: 4200,
+          base_ingredients: ['Hígado de pato', 'Mantequilla', 'Coñac', 'Pan francés', 'Mermelada'],
+          preparation_time: 8,
+          nutritional_info: { calories: 320, protein: 15, carbs: 12, fat: 24, fiber: 2 },
+          tags: ['Gourmet', 'Premium']
+        }
+      ],
+      'Plats Principaux': [
+        {
+          name: 'Coq au Vin',
+          description: 'Pollo guisado en vino tinto con verduras',
+          price: 6800,
+          base_ingredients: ['Pollo', 'Vino tinto', 'Champiñones', 'Cebollitas', 'Hierbas provenzales'],
+          preparation_time: 35,
+          nutritional_info: { calories: 480, protein: 35, carbs: 15, fat: 28, fiber: 4 },
+          tags: ['Clásico francés', 'Gourmet'],
+          is_featured: true
+        }
+      ]
+    },
+    'Churrascaria Ipanema': {
+      'Carnes Premium': [
+        {
+          name: 'Picanha Premium',
+          description: 'Corte brasileño premium a la parrilla',
+          price: 8500,
+          base_ingredients: ['Picanha', 'Sal gruesa', 'Ajo', 'Chimichurri brasileño'],
+          preparation_time: 25,
+          nutritional_info: { calories: 520, protein: 45, carbs: 2, fat: 35, fiber: 0 },
+          tags: ['Rodizio completo', 'Corte premium'],
+          is_featured: true
+        },
+        {
+          name: 'Costilla de Res',
+          description: 'Costilla jugosa con especias brasileñas',
+          price: 7200,
+          base_ingredients: ['Costilla de res', 'Especias brasileñas', 'Sal marina'],
+          preparation_time: 30,
+          nutritional_info: { calories: 580, protein: 42, carbs: 3, fat: 42, fiber: 0 },
+          tags: ['Parrilla brasileña', 'Familiar']
+        }
+      ],
+      'Acompañamientos': [
+        {
+          name: 'Farofa Tradicional',
+          description: 'Harina de mandioca tostada con tocino',
+          price: 1800,
+          base_ingredients: ['Harina de mandioca', 'Tocino', 'Cebolla', 'Huevo'],
+          preparation_time: 10,
+          nutritional_info: { calories: 180, protein: 6, carbs: 20, fat: 8, fiber: 3 },
+          tags: ['Tradicional', 'Casero']
+        }
+      ]
+    },
+    'Lima Fusión': {
+      'Ceviches Nikkei': [
+        {
+          name: 'Ceviche Nikkei',
+          description: 'Ceviche con leche de tigre y toque japonés',
+          price: 5200,
+          base_ingredients: ['Corvina', 'Leche de tigre', 'Ají amarillo', 'Jengibre', 'Soya'],
+          preparation_time: 20,
+          nutritional_info: { calories: 280, protein: 32, carbs: 12, fat: 8, fiber: 2 },
+          tags: ['Nikkei', 'Fresco'],
+          is_featured: true
+        },
+        {
+          name: 'Tiradito de Atún',
+          description: 'Atún fresco con ají amarillo y leche de tigre',
+          price: 6200,
+          base_ingredients: ['Atún fresco', 'Ají amarillo', 'Leche de tigre', 'Microvegetales'],
+          preparation_time: 15,
+          nutritional_info: { calories: 250, protein: 28, carbs: 8, fat: 12, fiber: 1 },
+          tags: ['Fusión moderna', 'Fresco']
+        }
+      ],
+      'Platos de Fondo': [
+        {
+          name: 'Lomo Saltado Fusión',
+          description: 'Lomo saltado con toque asiático y papas doradas',
+          price: 7800,
+          base_ingredients: ['Lomo de res', 'Cebolla', 'Tomate', 'Papas', 'Soya', 'Cilantro'],
+          preparation_time: 20,
+          nutritional_info: { calories: 520, protein: 35, carbs: 42, fat: 22, fiber: 5 },
+          tags: ['Peruano auténtico', 'Fusión moderna']
+        }
+      ]
+    },
+    'Oliva Mediterránea': {
+      'Mezze': [
+        {
+          name: 'Plato Mezze Clásico',
+          description: 'Selección de hummus, baba ganoush y aceitunas',
+          price: 4200,
+          base_ingredients: ['Hummus', 'Baba ganoush', 'Aceitunas kalamata', 'Pan pita', 'Aceite de oliva'],
+          preparation_time: 12,
+          nutritional_info: { calories: 320, protein: 12, carbs: 28, fat: 18, fiber: 8 },
+          tags: ['Mediterráneo', 'Vegetariano'],
+          is_featured: true
+        }
+      ],
+      'Pescados del Mar': [
+        {
+          name: 'Salmón a la Parrilla',
+          description: 'Salmón con hierbas mediterráneas y aceite de oliva',
+          price: 6800,
+          base_ingredients: ['Salmón', 'Aceite de oliva extra', 'Orégano', 'Limón', 'Alcaparras'],
+          preparation_time: 18,
+          nutritional_info: { calories: 420, protein: 38, carbs: 5, fat: 26, fiber: 1 },
+          tags: ['Saludable', 'Aceite oliva extra']
+        }
+      ]
+    },
+    'Al-Habibi': {
+      'Mezze Árabes': [
+        {
+          name: 'Mezze Árabe Completo',
+          description: 'Variedad de entradas árabes tradicionales',
+          price: 4800,
+          base_ingredients: ['Hummus', 'Tabbouleh', 'Kibbeh', 'Pan árabe', 'Yogur con pepino'],
+          preparation_time: 15,
+          nutritional_info: { calories: 380, protein: 16, carbs: 35, fat: 20, fiber: 8 },
+          tags: ['Tradicional', 'Vegetariano'],
+          is_featured: true
+        }
+      ],
+      'Kebabs': [
+        {
+          name: 'Shish Kebab',
+          description: 'Brochetas de cordero con especias árabes',
+          price: 6500,
+          base_ingredients: ['Cordero', 'Especias árabes', 'Cebolla', 'Pimientos', 'Arroz basmati'],
+          preparation_time: 22,
+          nutritional_info: { calories: 480, protein: 32, carbs: 25, fat: 28, fiber: 3 },
+          tags: ['Halal', 'Especias árabes']
+        }
+      ]
+    },
+    'Seoul Kitchen': {
+      'BBQ Coreano': [
+        {
+          name: 'Bulgogi',
+          description: 'Carne marinada a la parrilla coreana',
+          price: 6200,
+          base_ingredients: ['Carne de res', 'Marinada coreana', 'Cebollín', 'Sésamo', 'Arroz'],
+          preparation_time: 20,
+          nutritional_info: { calories: 450, protein: 32, carbs: 28, fat: 22, fiber: 2 },
+          tags: ['BBQ coreano', 'K-Food'],
+          is_featured: true
+        },
+        {
+          name: 'Galbi',
+          description: 'Costillas marinadas con salsa coreana',
+          price: 7800,
+          base_ingredients: ['Costillas de res', 'Salsa galbi', 'Ajo', 'Jengibre', 'Miel'],
+          preparation_time: 25,
+          nutritional_info: { calories: 520, protein: 38, carbs: 18, fat: 32, fiber: 1 },
+          tags: ['BBQ coreano', 'Premium']
+        }
+      ],
+      'Bibimbap': [
+        {
+          name: 'Bibimbap Tradicional',
+          description: 'Bowl de arroz con vegetales y carne',
+          price: 5200,
+          base_ingredients: ['Arroz', 'Vegetales variados', 'Carne marinada', 'Huevo', 'Gochujang'],
+          preparation_time: 18,
+          nutritional_info: { calories: 420, protein: 24, carbs: 48, fat: 16, fiber: 6 },
+          tags: ['Kimchi casero', 'Tradicional']
+        }
+      ]
+    },
+    'Fusion 360': {
+      'Tapas Fusión': [
+        {
+          name: 'Tataki de Atún',
+          description: 'Atún sellado con costra de sésamo y salsa ponzu',
+          price: 4800,
+          base_ingredients: ['Atún fresco', 'Sésamo negro', 'Ponzu', 'Microvegetales', 'Wasabi'],
+          preparation_time: 12,
+          nutritional_info: { calories: 280, protein: 26, carbs: 8, fat: 16, fiber: 2 },
+          tags: ['De autor', 'Innovador'],
+          is_featured: true
+        }
+      ],
+      'Carnes de Autor': [
+        {
+          name: 'Cordero con Costra de Hierbas',
+          description: 'Rack de cordero con técnicas modernas',
+          price: 9500,
+          base_ingredients: ['Rack de cordero', 'Hierbas frescas', 'Ajo negro', 'Reducción de vino'],
+          preparation_time: 30,
+          nutritional_info: { calories: 520, protein: 42, carbs: 8, fat: 35, fiber: 2 },
+          tags: ['Técnica molecular', 'Gourmet']
+        }
+      ]
+    },
+    'Mercado Gastronómico': {
+      'Street Food': [
+        {
+          name: 'Bao Buns Gourmet',
+          description: 'Panecillos al vapor con cerdo confitado',
+          price: 3800,
+          base_ingredients: ['Pan bao', 'Cerdo confitado', 'Pickles asiáticos', 'Salsa hoisin'],
+          preparation_time: 10,
+          nutritional_info: { calories: 320, protein: 18, carbs: 28, fat: 16, fiber: 3 },
+          tags: ['Street food', 'Artesanal'],
+          is_featured: true
+        }
+      ],
+      'Internacional': [
+        {
+          name: 'Pad Thai Fusión',
+          description: 'Pad Thai con ingredientes locales',
+          price: 4200,
+          base_ingredients: ['Fideos de arroz', 'Camarones', 'Vegetales tropicales', 'Tamarindo', 'Maní'],
+          preparation_time: 15,
+          nutritional_info: { calories: 380, protein: 20, carbs: 42, fat: 14, fiber: 4 },
+          tags: ['Internacional', 'Gourmet']
+        }
+      ]
+    },
+    'Soda La Típica': {
+      'Casados': [
+        {
+          name: 'Casado Típico',
+          description: 'Gallo pinto, carne, plátano, ensalada y frijoles',
+          price: 3200,
+          base_ingredients: ['Gallo pinto', 'Carne en salsa', 'Plátano maduro', 'Ensalada', 'Frijoles molidos'],
+          preparation_time: 12,
+          nutritional_info: { calories: 580, protein: 28, carbs: 65, fat: 22, fiber: 12 },
+          tags: ['100% tico', 'Tradicional'],
+          is_featured: true
+        },
+        {
+          name: 'Casado de Pollo',
+          description: 'Casado con pollo guisado tico',
+          price: 3500,
+          base_ingredients: ['Gallo pinto', 'Pollo guisado', 'Plátano', 'Ensalada', 'Frijoles'],
+          preparation_time: 12,
+          nutritional_info: { calories: 520, protein: 32, carbs: 58, fat: 18, fiber: 10 },
+          tags: ['Casero', 'Familiar']
+        }
+      ],
+      'Desayunos Típicos': [
+        {
+          name: 'Desayuno Tico Completo',
+          description: 'Gallo pinto, huevos, natilla, queso y café',
+          price: 2800,
+          base_ingredients: ['Gallo pinto', 'Huevos', 'Natilla', 'Queso blanco', 'Café'],
+          preparation_time: 10,
+          nutritional_info: { calories: 450, protein: 22, carbs: 48, fat: 20, fiber: 8 },
+          tags: ['100% tico', 'Económico']
+        }
       ]
     }
-  },
+  
+  },  
+
 
   // Toppings por restaurante
   toppings: {
@@ -424,6 +1450,7 @@ const seedData = {
       { name: 'Mayonesa Picante', description: 'Mayonesa con sriracha', price: 300 },
       { name: 'Algas Wakame', description: 'Ensalada de algas', price: 500 }
     ],
+
     'Café del Volcán': [
       { name: 'Shot Extra', description: 'Shot adicional de espresso', price: 400 },
       { name: 'Leche de Almendra', description: 'Sustituto de leche', price: 300 },
@@ -436,8 +1463,95 @@ const seedData = {
       { name: 'Leche Descremada', description: 'Opción baja en grasa', price: 0 },
       { name: 'Azúcar Brown', description: 'Azúcar morena', price: 50 }
     ]
+
+    ,
+    'Tacos & Más': [
+      { name: 'Guacamole Extra', description: 'Porción adicional de guacamole', price: 800 },
+      { name: 'Queso Extra', description: 'Queso Oaxaca adicional', price: 600 },
+      { name: 'Jalapeños', description: 'Jalapeños en escabeche', price: 300 },
+      { name: 'Crema', description: 'Crema mexicana', price: 400 },
+      { name: 'Pico de Gallo', description: 'Salsa fresca de tomate', price: 500 },
+      { name: 'Carne Extra', description: 'Porción adicional de carne', price: 1200 },
+      { name: 'Salsa Verde', description: 'Salsa verde picante', price: 200 },
+      { name: 'Salsa Roja', description: 'Salsa roja tradicional', price: 200 },
+      { name: 'Cebolla Morada', description: 'Cebolla morada encurtida', price: 300 },
+      { name: 'Cilantro Extra', description: 'Cilantro fresco adicional', price: 200 }
+    ],
+    'Dragón Dorado': [
+      { name: 'Pollo Extra', description: 'Porción adicional de pollo', price: 1000 },
+      { name: 'Camarones', description: 'Camarones salteados', price: 1500 },
+      { name: 'Vegetales Extra', description: 'Mix de vegetales adicionales', price: 600 },
+      { name: 'Salsa Agridulce', description: 'Salsa agridulce casera', price: 300 },
+      { name: 'Arroz Extra', description: 'Porción adicional de arroz', price: 500 },
+      { name: 'Tofu', description: 'Tofu frito', price: 800 },
+      { name: 'Huevo Frito', description: 'Huevo frito encima', price: 400 },
+      { name: 'Brócoli', description: 'Brócoli fresco salteado', price: 500 },
+      { name: 'Setas', description: 'Setas shiitake', price: 700 },
+      { name: 'Salsa de Soya', description: 'Salsa de soya premium', price: 100 }
+    ],
+    'Curry House': [
+      { name: 'Arroz Basmati', description: 'Porción de arroz basmati', price: 800 },
+      { name: 'Naan Extra', description: 'Pan naan adicional', price: 600 },
+      { name: 'Pollo Extra', description: 'Porción adicional de pollo', price: 1200 },
+      { name: 'Verduras', description: 'Mix de verduras curry', price: 700 },
+      { name: 'Yogur Raita', description: 'Yogur con pepino', price: 400 },
+      { name: 'Mango Chutney', description: 'Chutney de mango dulce', price: 300 },
+      { name: 'Picante Extra', description: 'Especias picantes adicionales', price: 200 },
+      { name: 'Ghee', description: 'Mantequilla clarificada', price: 300 },
+      { name: 'Cilantro Fresco', description: 'Hojas de cilantro', price: 200 },
+      { name: 'Pappadums', description: 'Crackers indios crujientes', price: 500 }
+    ],
+    'Green Garden': [
+      { name: 'Aguacate Extra', description: 'Aguacate fresco adicional', price: 800 },
+      { name: 'Quinoa', description: 'Porción de quinoa cocida', price: 600 },
+      { name: 'Tofu Marinado', description: 'Tofu con especias', price: 700 },
+      { name: 'Hummus', description: 'Hummus de garbanzos', price: 500 },
+      { name: 'Semillas de Chía', description: 'Semillas de chía orgánicas', price: 400 },
+      { name: 'Nueces', description: 'Mix de nueces', price: 600 },
+      { name: 'Aderezo Tahini', description: 'Aderezo de sésamo', price: 300 },
+      { name: 'Germinados', description: 'Germinados frescos', price: 400 },
+      { name: 'Proteína Vegetal', description: 'Proteína de soya', price: 800 },
+      { name: 'Aceite de Oliva Extra', description: 'Aceite de oliva premium', price: 200 }
+    ],
+    'Wings Express': [
+      { name: 'Salsa Buffalo Extra', description: 'Salsa buffalo adicional', price: 300 },
+      { name: 'Aderezo Ranch', description: 'Aderezo ranch cremoso', price: 300 },
+      { name: 'Papas Extra', description: 'Porción adicional de papas', price: 800 },
+      { name: 'Aros de Cebolla', description: 'Aros de cebolla crujientes', price: 600 },
+      { name: 'Queso Derretido', description: 'Queso cheddar derretido', price: 500 },
+      { name: 'Bacon Bits', description: 'Trocitos de bacon', price: 700 },
+      { name: 'Jalapeños', description: 'Jalapeños picantes', price: 300 },
+      { name: 'Salsa BBQ', description: 'Salsa barbacoa casera', price: 200 },
+      { name: 'Alitas Extra', description: '6 alitas adicionales', price: 2000 },
+      { name: 'Apio', description: 'Palitos de apio fresco', price: 200 }
+    ],
+    'Dulce Tentación': [
+      { name: 'Chocolate Extra', description: 'Cobertura de chocolate', price: 400 },
+      { name: 'Fresas Frescas', description: 'Fresas naturales', price: 600 },
+      { name: 'Crema Batida', description: 'Crema batida fresca', price: 300 },
+      { name: 'Helado', description: 'Bola de helado de vainilla', price: 500 },
+      { name: 'Caramelo', description: 'Salsa de caramelo', price: 300 },
+      { name: 'Nueces', description: 'Nueces tostadas', price: 400 },
+      { name: 'Coco Rallado', description: 'Coco rallado natural', price: 200 },
+      { name: 'Cereza', description: 'Cereza confitada', price: 300 },
+      { name: 'Almendras', description: 'Almendras fileteadas', price: 400 },
+      { name: 'Dulce de Leche', description: 'Dulce de leche casero', price: 400 }
+    ],
+    'Mariscos del Pacífico': [
+      { name: 'Camarones Extra', description: 'Camarones adicionales', price: 1500 },
+      { name: 'Pulpo', description: 'Pulpo fresco', price: 1800 },
+      { name: 'Aguacate', description: 'Aguacate fresco', price: 600 },
+      { name: 'Limón Extra', description: 'Limones adicionales', price: 200 },
+      { name: 'Ají Picante', description: 'Ají picante casero', price: 300 },
+      { name: 'Cebolla Morada', description: 'Cebolla morada fresca', price: 300 },
+      { name: 'Yuca Frita', description: 'Yuca frita criolla', price: 800 },
+      { name: 'Patacones', description: 'Plátano verde frito', price: 700 },
+      { name: 'Arroz Blanco', description: 'Arroz blanco cocido', price: 500 },
+      { name: 'Salsa Rosada', description: 'Salsa golf casera', price: 300 }
+    ]
   }
 };
+
 
 // Función principal de seeding
 async function seedDatabase() {
