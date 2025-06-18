@@ -10,6 +10,7 @@ const categoryRoutes = require('./routes/categoryRoutes');
 const tagRoutes = require('./routes/tagRoutes');
 const productRoutes = require('./routes/productRoutes');
 const toppingRoutes = require('./routes/toppingRoutes');
+const favoriteRoutes = require('./routes/favoriteRoutes');
 
 const app = express();
 
@@ -26,6 +27,7 @@ app.use('/api/categories', categoryRoutes);
 app.use('/api/tags', tagRoutes);
 app.use('/api/products', productRoutes); 
 app.use('/api/toppings', toppingRoutes);
+app.use('/api/favorites', favoriteRoutes);
 
 // Ruta de prueba
 app.get('/', (req, res) => {
