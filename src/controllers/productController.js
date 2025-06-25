@@ -224,6 +224,7 @@ const updateProduct = async (req, res) => {
       is_available,
       is_featured,
       stock_quantity
+      
     } = req.body;
     const user = req.user;  // ← AGREGADO
 

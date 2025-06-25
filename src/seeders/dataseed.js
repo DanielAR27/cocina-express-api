@@ -727,7 +727,7 @@ const seedData = {
   },
 
   // Productos detallados
-  products: {
+products: {
     'Pizzería Nonna Rosa': {
       'Pizzas Clásicas': [
         {
@@ -756,7 +756,7 @@ const seedData = {
         {
           name: 'Pizza Hawaiana',
           description: 'Pizza con jamón, piña y mozzarella',
-          image: 'https://placehold.co/600x400/FF6347/FFFFFF?text=Pizza+Hawaiana',
+          image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=600&h=400&fit=crop',
           price: 5800,
           base_ingredients: ['Masa de pizza', 'Salsa de tomate', 'Mozzarella', 'Jamón', 'Piña'],
           preparation_time: 25,
@@ -1098,7 +1098,7 @@ const seedData = {
         {
           name: 'Ensalada Arcoíris',
           description: 'Mix de vegetales frescos con aderezo de tahini',
-          image: 'https://placehold.co/600x400/32CD32/FFFFFF?text=Ensalada+Arcoiris',
+          image: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&h=400&fit=crop',
 
           price: 3200,
           base_ingredients: ['Lechuga', 'Zanahoria', 'Remolacha', 'Pepino', 'Tomate cherry', 'Aderezo tahini'],
@@ -1112,7 +1112,7 @@ const seedData = {
         {
           name: 'Buddha Bowl',
           description: 'Bowl completo con quinoa, vegetales y proteína vegetal',
-          image: 'https://placehold.co/600x400/228B22/FFFFFF?text=Buddha+Bowl',
+          image: 'https://images.unsplash.com/photo-1546793665-c74683f339c1?w=600&h=400&fit=crop',
           price: 4500,
           base_ingredients: ['Quinoa', 'Garbanzos', 'Aguacate', 'Brócoli', 'Zanahoria', 'Hummus'],
           preparation_time: 15,
@@ -1127,7 +1127,7 @@ const seedData = {
         {
           name: 'Alitas Buffalo',
           description: 'Alitas picantes con salsa buffalo clásica',
-          image: 'https://placehold.co/600x400/FF4500/FFFFFF?text=Alitas+Buffalo',
+          image: 'https://images.unsplash.com/photo-1527477396000-e27163b481c2?w=600&h=400&fit=crop',
 
           price: 4200,
           base_ingredients: ['Alitas de pollo', 'Salsa buffalo', 'Apio', 'Aderezo ranch'],
@@ -1139,7 +1139,7 @@ const seedData = {
         {
           name: 'Alitas BBQ',
           description: 'Alitas glaseadas con salsa barbacoa casera',
-          image: 'https://placehold.co/600x400/8B4513/FFFFFF?text=Alitas+BBQ',
+          image: 'https://images.unsplash.com/photo-1608039755401-742074f0548d?w=600&h=400&fit=crop',
 
           price: 4200,
           base_ingredients: ['Alitas de pollo', 'Salsa BBQ', 'Miel', 'Especias'],
@@ -1152,7 +1152,7 @@ const seedData = {
         {
           name: 'Burger Americana',
           description: 'Hamburguesa clásica americana con papas',
-          image: 'https://placehold.co/600x400/FF6347/FFFFFF?text=Burger+Americana',
+          image: 'https://images.unsplash.com/photo-1551782450-17144efb9c50?w=600&h=400&fit=crop',
           price: 4800,
           base_ingredients: ['Pan brioche', 'Carne de res', 'Queso americano', 'Lechuga', 'Tomate', 'Papas fritas'],
           preparation_time: 15,
@@ -1166,7 +1166,7 @@ const seedData = {
         {
           name: 'Pastel de Chocolate',
           description: 'Pastel de chocolate húmedo con ganache',
-          image: 'https://placehold.co/600x400/8B4513/FFFFFF?text=Pastel+Chocolate',
+          image: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600&h=400&fit=crop',
 
           price: 2800,
           base_ingredients: ['Chocolate', 'Harina', 'Huevos', 'Mantequilla', 'Ganache'],
@@ -1178,7 +1178,7 @@ const seedData = {
         {
           name: 'Tres Leches',
           description: 'Pastel tradicional bañado en tres leches',
-          image: 'https://placehold.co/600x400/F5DEB3/8B4513?text=Tres+Leches',
+          image: 'https://images.unsplash.com/photo-1571115764595-644a1f56a55c?w=600&h=400&fit=crop',
 
           price: 2500,
           base_ingredients: ['Bizcocho', 'Leche condensada', 'Leche evaporada', 'Crema', 'Canela'],
@@ -1191,7 +1191,7 @@ const seedData = {
         {
           name: 'Cupcake Red Velvet',
           description: 'Cupcake de terciopelo rojo con frosting de queso crema',
-          image: 'https://placehold.co/600x400/DC143C/FFFFFF?text=Red+Velvet',
+          image: 'https://images.unsplash.com/photo-1576618148400-f54bed99fcfd?w=600&h=400&fit=crop',
           price: 1800,
           base_ingredients: ['Harina', 'Cacao', 'Colorante rojo', 'Queso crema', 'Mantequilla'],
           preparation_time: 3,
@@ -1205,7 +1205,7 @@ const seedData = {
         {
           name: 'Ceviche de Corvina',
           description: 'Ceviche fresco de corvina con limón y cilantro',
-          image: 'https://placehold.co/600x400/20B2AA/FFFFFF?text=Ceviche+Corvina',
+          image: 'https://images.unsplash.com/photo-1627662168223-7df99068099a?w=600&h=400&fit=crop',
 
           price: 4200,
           base_ingredients: ['Corvina fresca', 'Limón', 'Cebolla morada', 'Cilantro', 'Ají dulce'],
@@ -1217,7 +1217,7 @@ const seedData = {
         {
           name: 'Ceviche Mixto',
           description: 'Ceviche con corvina, camarones y pulpo',
-          image: 'https://placehold.co/600x400/4682B4/FFFFFF?text=Ceviche+Mixto',
+          image: 'https://images.unsplash.com/photo-1544982503-9f984c14501a?w=600&h=400&fit=crop',
           price: 5200,
           base_ingredients: ['Corvina', 'Camarones', 'Pulpo', 'Limón', 'Cebolla', 'Ají'],
           preparation_time: 18,
@@ -1229,7 +1229,7 @@ const seedData = {
         {
           name: 'Filete de Dorado a la Plancha',
           description: 'Filete de dorado fresco con vegetales salteados',
-          image: 'https://placehold.co/600x400/FFD700/000000?text=Dorado+Plancha',
+          image: 'https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=600&h=400&fit=crop',
           price: 6200,
           base_ingredients: ['Filete de dorado', 'Vegetales', 'Limón', 'Hierbas finas', 'Aceite de oliva'],
           preparation_time: 20,
@@ -1244,7 +1244,7 @@ const seedData = {
         {
           name: 'Escargots de Bourgogne',
           description: 'Caracoles en mantequilla de ajo y perejil',
-          image: 'https://placehold.co/600x400/800080/FFFFFF?text=Escargots',
+          image: 'https://images.unsplash.com/photo-1544982503-9f984c14501a?w=600&h=400&fit=crop',
           price: 3800,
           base_ingredients: ['Caracoles', 'Mantequilla', 'Ajo', 'Perejil', 'Vino blanco'],
           preparation_time: 15,
@@ -1255,7 +1255,7 @@ const seedData = {
         {
           name: 'Paté de Foie',
           description: 'Paté casero con tostadas francesas',
-          image: 'https://placehold.co/600x400/8B4513/FFFFFF?text=Pate+Foie',
+          image: 'https://images.unsplash.com/photo-1558114965-eeb97aa84cbc?w=600&h=400&fit=crop',
 
           price: 4200,
           base_ingredients: ['Hígado de pato', 'Mantequilla', 'Coñac', 'Pan francés', 'Mermelada'],
@@ -1268,7 +1268,7 @@ const seedData = {
         {
           name: 'Coq au Vin',
           description: 'Pollo guisado en vino tinto con verduras',
-          image: 'https://placehold.co/600x400/722F37/FFFFFF?text=Coq+au+Vin',
+          image: 'https://images.unsplash.com/photo-1610057099431-d73a1c9d2f2f?w=600&h=400&fit=crop',
           price: 6800,
           base_ingredients: ['Pollo', 'Vino tinto', 'Champiñones', 'Cebollitas', 'Hierbas provenzales'],
           preparation_time: 35,
@@ -1283,7 +1283,7 @@ const seedData = {
         {
           name: 'Picanha Premium',
           description: 'Corte brasileño premium a la parrilla',
-          image: 'https://placehold.co/600x400/8B0000/FFFFFF?text=Picanha+Premium',
+          image: 'https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=600&h=400&fit=crop',
           price: 8500,
           base_ingredients: ['Picanha', 'Sal gruesa', 'Ajo', 'Chimichurri brasileño'],
           preparation_time: 25,
@@ -1294,7 +1294,7 @@ const seedData = {
         {
           name: 'Costilla de Res',
           description: 'Costilla jugosa con especias brasileñas',
-          image: 'https://placehold.co/600x400/A0522D/FFFFFF?text=Costilla+Res',
+          image: 'https://images.unsplash.com/photo-1558030006-450675393462?w=600&h=400&fit=crop',
           price: 7200,
           base_ingredients: ['Costilla de res', 'Especias brasileñas', 'Sal marina'],
           preparation_time: 30,
@@ -1306,7 +1306,7 @@ const seedData = {
         {
           name: 'Farofa Tradicional',
           description: 'Harina de mandioca tostada con tocino',
-          image: 'https://placehold.co/600x400/DAA520/000000?text=Farofa',
+          image: 'https://images.unsplash.com/photo-1600891964092-4316c288032e?w=600&h=400&fit=crop',
           price: 1800,
           base_ingredients: ['Harina de mandioca', 'Tocino', 'Cebolla', 'Huevo'],
           preparation_time: 10,
@@ -1320,7 +1320,7 @@ const seedData = {
         {
           name: 'Ceviche Nikkei',
           description: 'Ceviche con leche de tigre y toque japonés',
-          image: 'https://placehold.co/600x400/FF69B4/FFFFFF?text=Ceviche+Nikkei',
+          image: 'https://images.unsplash.com/photo-1609501676725-7186f932a4de?w=600&h=400&fit=crop',
           price: 5200,
           base_ingredients: ['Corvina', 'Leche de tigre', 'Ají amarillo', 'Jengibre', 'Soya'],
           preparation_time: 20,
@@ -1331,7 +1331,7 @@ const seedData = {
         {
           name: 'Tiradito de Atún',
           description: 'Atún fresco con ají amarillo y leche de tigre',
-          image: 'https://placehold.co/600x400/FF1493/FFFFFF?text=Tiradito+Atun',
+          image: 'https://images.unsplash.com/photo-1563612116625-3012372fccce?w=600&h=400&fit=crop',
           price: 6200,
           base_ingredients: ['Atún fresco', 'Ají amarillo', 'Leche de tigre', 'Microvegetales'],
           preparation_time: 15,
@@ -1343,7 +1343,7 @@ const seedData = {
         {
           name: 'Lomo Saltado Fusión',
           description: 'Lomo saltado con toque asiático y papas doradas',
-          image: 'https://placehold.co/600x400/CD853F/FFFFFF?text=Lomo+Saltado',
+          image: 'https://images.unsplash.com/photo-1606491956689-2ea866880c84?w=600&h=400&fit=crop',
           price: 7800,
           base_ingredients: ['Lomo de res', 'Cebolla', 'Tomate', 'Papas', 'Soya', 'Cilantro'],
           preparation_time: 20,
@@ -1357,7 +1357,7 @@ const seedData = {
         {
           name: 'Plato Mezze Clásico',
           description: 'Selección de hummus, baba ganoush y aceitunas',
-          image: 'https://placehold.co/600x400/9ACD32/FFFFFF?text=Mezze+Clasico',
+          image: 'https://images.unsplash.com/photo-1540713434306-58505572485b?w=600&h=400&fit=crop',
           price: 4200,
           base_ingredients: ['Hummus', 'Baba ganoush', 'Aceitunas kalamata', 'Pan pita', 'Aceite de oliva'],
           preparation_time: 12,
@@ -1370,7 +1370,7 @@ const seedData = {
         {
           name: 'Salmón a la Parrilla',
           description: 'Salmón con hierbas mediterráneas y aceite de oliva',
-          image: 'https://placehold.co/600x400/FA8072/FFFFFF?text=Salmon+Parrilla',
+          image: 'https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=600&h=400&fit=crop',
           price: 6800,
           base_ingredients: ['Salmón', 'Aceite de oliva extra', 'Orégano', 'Limón', 'Alcaparras'],
           preparation_time: 18,
@@ -1384,7 +1384,7 @@ const seedData = {
         {
           name: 'Mezze Árabe Completo',
           description: 'Variedad de entradas árabes tradicionales',
-          image: 'https://placehold.co/600x400/DAA520/000000?text=Mezze+Arabe',
+          image: 'https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=600&h=400&fit=crop',
 
           price: 4800,
           base_ingredients: ['Hummus', 'Tabbouleh', 'Kibbeh', 'Pan árabe', 'Yogur con pepino'],
@@ -1398,7 +1398,7 @@ const seedData = {
         {
           name: 'Shish Kebab',
           description: 'Brochetas de cordero con especias árabes',
-          image: 'https://placehold.co/600x400/8B4513/FFFFFF?text=Shish+Kebab',
+          image: 'https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=600&h=400&fit=crop',
           price: 6500,
           base_ingredients: ['Cordero', 'Especias árabes', 'Cebolla', 'Pimientos', 'Arroz basmati'],
           preparation_time: 22,
@@ -1412,7 +1412,7 @@ const seedData = {
         {
           name: 'Bulgogi',
           description: 'Carne marinada a la parrilla coreana',
-          image: 'https://placehold.co/600x400/DC143C/FFFFFF?text=Bulgogi',
+          image: 'https://images.unsplash.com/photo-1590301157890-4810ed352733?w=600&h=400&fit=crop',
 
           price: 6200,
           base_ingredients: ['Carne de res', 'Marinada coreana', 'Cebollín', 'Sésamo', 'Arroz'],
@@ -1424,7 +1424,7 @@ const seedData = {
         {
           name: 'Galbi',
           description: 'Costillas marinadas con salsa coreana',
-          image: 'https://placehold.co/600x400/8B0000/FFFFFF?text=Galbi',
+          image: 'https://images.unsplash.com/photo-1600191725205-200c6543e7eb?w=600&h=400&fit=crop',
           price: 7800,
           base_ingredients: ['Costillas de res', 'Salsa galbi', 'Ajo', 'Jengibre', 'Miel'],
           preparation_time: 25,
@@ -1436,7 +1436,7 @@ const seedData = {
         {
           name: 'Bibimbap Tradicional',
           description: 'Bowl de arroz con vegetales y carne',
-          image: 'https://placehold.co/600x400/FF6347/FFFFFF?text=Bibimbap',
+          image: 'https://images.unsplash.com/photo-1498654896293-37aacf113fd9?w=600&h=400&fit=crop',
           price: 5200,
           base_ingredients: ['Arroz', 'Vegetales variados', 'Carne marinada', 'Huevo', 'Gochujang'],
           preparation_time: 18,
@@ -1450,7 +1450,7 @@ const seedData = {
         {
           name: 'Tataki de Atún',
           description: 'Atún sellado con costra de sésamo y salsa ponzu',
-          image: 'https://placehold.co/600x400/2F4F4F/FFFFFF?text=Tataki+Atun',
+          image: 'https://images.unsplash.com/photo-1571068316344-75bc76f77890?w=600&h=400&fit=crop',
           price: 4800,
           base_ingredients: ['Atún fresco', 'Sésamo negro', 'Ponzu', 'Microvegetales', 'Wasabi'],
           preparation_time: 12,
@@ -1463,7 +1463,7 @@ const seedData = {
         {
           name: 'Cordero con Costra de Hierbas',
           description: 'Rack de cordero con técnicas modernas',
-          image: 'https://placehold.co/600x400/556B2F/FFFFFF?text=Cordero+Hierbas',
+          image: 'https://images.unsplash.com/photo-1544025162-d76694265947?w=600&h=400&fit=crop',
           price: 9500,
           base_ingredients: ['Rack de cordero', 'Hierbas frescas', 'Ajo negro', 'Reducción de vino'],
           preparation_time: 30,
@@ -1477,7 +1477,7 @@ const seedData = {
         {
           name: 'Bao Buns Gourmet',
           description: 'Panecillos al vapor con cerdo confitado',
-          image: 'https://placehold.co/600x400/F5DEB3/8B4513?text=Bao+Buns',
+          image: 'https://images.unsplash.com/photo-1563379091339-03246963d378?w=600&h=400&fit=crop',
           price: 3800,
           base_ingredients: ['Pan bao', 'Cerdo confitado', 'Pickles asiáticos', 'Salsa hoisin'],
           preparation_time: 10,
@@ -1490,7 +1490,7 @@ const seedData = {
         {
           name: 'Pad Thai Fusión',
           description: 'Pad Thai con ingredientes locales',
-          image: 'https://placehold.co/600x400/FF8C00/FFFFFF?text=Pad+Thai',
+          image: 'https://images.unsplash.com/photo-1559314809-0f31657def5e?w=600&h=400&fit=crop',
           price: 4200,
           base_ingredients: ['Fideos de arroz', 'Camarones', 'Vegetales tropicales', 'Tamarindo', 'Maní'],
           preparation_time: 15,
@@ -1504,7 +1504,7 @@ const seedData = {
         {
           name: 'Casado Típico',
           description: 'Gallo pinto, carne, plátano, ensalada y frijoles',
-          image: 'https://placehold.co/600x400/228B22/FFFFFF?text=Casado+Tipico',
+          image: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&h=400&fit=crop',
           price: 3200,
           base_ingredients: ['Gallo pinto', 'Carne en salsa', 'Plátano maduro', 'Ensalada', 'Frijoles molidos'],
           preparation_time: 12,
@@ -1515,7 +1515,7 @@ const seedData = {
         {
           name: 'Casado de Pollo',
           description: 'Casado con pollo guisado tico',
-          image: 'https://placehold.co/600x400/32CD32/FFFFFF?text=Casado+Pollo',
+          image: 'https://images.unsplash.com/photo-1596797038530-2c107229654b?w=600&h=400&fit=crop',
           price: 3500,
           base_ingredients: ['Gallo pinto', 'Pollo guisado', 'Plátano', 'Ensalada', 'Frijoles'],
           preparation_time: 12,
@@ -1527,7 +1527,7 @@ const seedData = {
         {
           name: 'Desayuno Tico Completo',
           description: 'Gallo pinto, huevos, natilla, queso y café',
-          image: 'https://placehold.co/600x400/FFD700/000000?text=Desayuno+Tico',
+          image: 'https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?w=600&h=400&fit=crop',
           price: 2800,
           base_ingredients: ['Gallo pinto', 'Huevos', 'Natilla', 'Queso blanco', 'Café'],
           preparation_time: 10,
@@ -1537,7 +1537,7 @@ const seedData = {
       ]
     }
   
-  },  
+  }, 
 
 
   // Toppings por restaurante
