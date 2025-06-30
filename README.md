@@ -30,8 +30,7 @@ cocina-express-api/
 │   │   ├── tagModel.js              # Modelo de tag de restaurante (IMPLEMENTADO)
 │   │   ├── toppingModel.js          # Modelo de toppings (IMPLEMENTADO)
 │   │   ├── userModel.js             # Modelo de usuarios (IMPLEMENTADO)
-│   │   └── orderModel.js            # Por implementar
-│   │   └── cartModel.js             # Por implementar
+
 │   ├── controllers/
 │   │   ├── categoryController.js         # Controlador de categorias (IMPLEMENTADO)
 │   │   ├── productController.js          # Controlador de productos (IMPLEMENTADO)
@@ -40,8 +39,7 @@ cocina-express-api/
 │   │   ├── tagController.js              # Controlador de tag de restaurante (IMPLEMENTADO)
 │   │   ├── toppingController.js          # Controlador de toppings (IMPLEMENTADO)
 │   │   ├── userController.js             # Controlador de usuarios (IMPLEMENTADO)
-│   │   └── orderController.js            # Por implementar
-│   │   └── cartController.js             # Por implementar
+
 │   ├── routes/
 │   │   ├── categoryRoutes.js         # Enrutador de categorias (IMPLEMENTADO)
 │   │   ├── productRoutes.js          # Enrutador de productos (IMPLEMENTADO)
@@ -50,8 +48,7 @@ cocina-express-api/
 │   │   ├── tagRoutes.js              # Enrutador de tag de restaurante (IMPLEMENTADO)
 │   │   ├── toppingRoutes.js          # Enrutador de toppings (IMPLEMENTADO)
 │   │   ├── userRoutes.js             # Enrutador de usuarios (IMPLEMENTADO)
-│   │   └── orderRoutes.js            # Por implementar
-│   │   └── cartRoutes.js             # Por implementar
+
 │   ├── middleware/
 │   │   └── roleMiddleware.js    # Middleware de roles (IMPLEMENTADO)
 │   ├── utils/
